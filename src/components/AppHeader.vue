@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{ 'header-scrolled': isScrolled }">
     <nav class="nav container">
       <!-- Logo -->
       <div class="nav-brand">
@@ -196,6 +196,7 @@ const languageStore = useLanguageStore()
 const showMobileMenu = ref(false)
 const showLanguageMenu = ref(false)
 const isMobile = ref(false)
+const isScrolled = ref(false)
 
 // Screen width detection
 const checkScreenSize = () => {
@@ -208,6 +209,11 @@ const checkScreenSize = () => {
     showMobileMenu.value = false
     document.body.style.overflow = ''
   }
+}
+
+// Handle scroll for header background
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50
 }
 
 const navigation = [
@@ -312,11 +318,14 @@ onMounted(() => {
   checkScreenSize()
   // Listen for window resize
   window.addEventListener('resize', checkScreenSize)
+  // Listen for scroll events
+  window.addEventListener('scroll', handleScroll)
 })
 
 onUnmounted(() => {
   document.removeEventListener('click', handleClickOutside)
   window.removeEventListener('resize', checkScreenSize)
+  window.removeEventListener('scroll', handleScroll)
   document.body.style.overflow = ''
 })
 </script>
@@ -328,10 +337,17 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   z-index: 999;
+  background: transparent;
+  border-bottom: none;
+  backdrop-filter: none;
+  transition: all var(--transition-normal);
+  box-shadow: none;
+}
+
+.header.header-scrolled {
   background: rgba(10, 14, 26, 0.95);
   border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(20px);
-  transition: all var(--transition-normal);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -446,7 +462,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
+  width: 3.5rem;
   height: 2.5rem;
   background: rgba(0, 245, 255, 0.1);
   border: 1px solid var(--color-border);
@@ -461,7 +477,7 @@ onUnmounted(() => {
 
 @media (max-width: 480px) {
   .control-btn {
-    width: 2.25rem;
+    width: 3.25rem;
     height: 2.25rem;
     min-width: 40px;
     min-height: 40px;

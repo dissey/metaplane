@@ -95,35 +95,75 @@
     <!-- Token Economy Section -->
     <section class="section token-economy-section">
       <div class="container">
-        <div class="section-content reverse">
+        <div class="section-header">
+          <h2 class="section-title">TOKEN ECONOMY</h2>
+        </div>
+        
+        <div class="section-content">
           <div class="section-visual">
             <div class="economy-illustration">
-              <div class="token-flow">
-                <div class="flow-node node-1"></div>
-                <div class="flow-node node-2"></div>
-                <div class="flow-node node-3"></div>
-                <div class="connecting-lines"></div>
+              <!-- 3D Token Visualization -->
+              <div class="token-3d-container">
+                <div class="token-platform">
+                  <div class="platform-base"></div>
+                  <div class="platform-glow"></div>
+                </div>
+                
+                <div class="floating-elements">
+                  <div class="token-coin coin-btc">
+                    <span class="coin-symbol">₿</span>
+                  </div>
+                  <div class="token-coin coin-eth">
+                    <span class="coin-symbol">Ξ</span>
+                  </div>
+                  <div class="token-coin coin-dollar">
+                    <span class="coin-symbol">$</span>
+                  </div>
+                </div>
+                
+                <div class="growth-arrow">
+                  <div class="arrow-line"></div>
+                  <div class="arrow-head"></div>
+                </div>
+                
+                <div class="data-visualization">
+                  <div class="chart-bars">
+                    <div class="bar" style="height: 40%"></div>
+                    <div class="bar" style="height: 70%"></div>
+                    <div class="bar" style="height: 90%"></div>
+                    <div class="bar" style="height: 60%"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          
           <div class="section-text">
-            <h2 class="section-title">TOKEN ECONOMY</h2>
-            <div class="economy-details">
+            <div class="economy-timeline">
+              <div class="timeline-line"></div>
+              
               <div class="economy-item">
+                <div class="item-marker"></div>
                 <div class="item-label">UTILITY</div>
-                <div class="item-description">Governance voting, staking, discounts, and access to premium features</div>
+                <div class="item-description">Governance voting, payments, discounts, and access to services.</div>
               </div>
+              
               <div class="economy-item">
-                <div class="item-label">GOVERNANCE RIGHTS</div>
-                <div class="item-description">Voting rights with DeFi staking mechanisms. 12,000 total smart city in the base. BTC pool</div>
+                <div class="item-marker"></div>
+                <div class="item-label">GROWTH MODEL</div>
+                <div class="item-description">Starting with 1,000 members, +3,000 each month until 10,000, then +500 per month.</div>
               </div>
+              
               <div class="economy-item">
-                <div class="item-label">STAKING</div>
-                <div class="item-description">Stake with multiple reward mechanisms to earning steady passive income</div>
+                <div class="item-marker"></div>
+                <div class="item-label">VALUE ASSUMPTION</div>
+                <div class="item-description">Hypothetically, BTC price increases 5% monthly → token value follows similar growth.</div>
               </div>
+              
               <div class="economy-item">
+                <div class="item-marker"></div>
                 <div class="item-label">IMPORTANT</div>
-                <div class="item-description">Voting mechanism for the financial markets and governance</div>
+                <div class="item-description">These assumptions are illustrative scenarios, not guarantees.</div>
               </div>
             </div>
           </div>
@@ -139,44 +179,30 @@
           <p class="section-subtitle">(ILLUSTRATIVE EXAMPLE)</p>
         </div>
         
-        <div class="growth-content">
-          <div class="growth-text">
-            <div class="growth-stats">
-              <div class="stat-item">
-                <div class="stat-label">Staking Pool Allocation</div>
-                <div class="stat-value">Month 1: 400 million (40,000,000 x BTC)</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-label"></div>
-                <div class="stat-value">Month 2: 500 million (10,000 x 50,000,000 x BTC)</div>
-              </div>
-              <div class="stat-item">
-                <div class="stat-label"></div>
-                <div class="stat-value">And so on...</div>
+        <div class="growth-card">
+          <div class="growth-content">
+            <div class="growth-text">
+              <div class="info-panel">
+                <div class="info-item">
+                  <span class="bullet">•</span>
+                  <span class="info-text">Month 1: 1,000 members x ¥5,000 = ¥5,000,000 in BTC.</span>
+                </div>
+                
+                <div class="info-item">
+                  <span class="bullet">•</span>
+                  <span class="info-text">Month 2: 4,000 members x ¥5,000 = ¥20,000,000 in BTC.</span>
+                </div>
+                
+                <div class="info-item">
+                  <span class="bullet">•</span>
+                  <span class="info-text">... and so on.</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="growth-chart">
-            <div class="chart-container">
-              <div class="chart-bars">
-                <div class="chart-bar" style="height: 40%"></div>
-                <div class="chart-bar" style="height: 60%"></div>
-                <div class="chart-bar" style="height: 80%"></div>
-                <div class="chart-bar" style="height: 90%"></div>
-                <div class="chart-bar" style="height: 70%"></div>
-                <div class="chart-bar" style="height: 85%"></div>
-                <div class="chart-bar" style="height: 95%"></div>
-                <div class="chart-bar" style="height: 100%"></div>
-              </div>
-              <div class="chart-labels">
-                <span>Month 1</span>
-                <span>Month 2</span>
-                <span>Month 3</span>
-                <span>Month 4</span>
-                <span>Month 5</span>
-                <span>Month 6</span>
-                <span>Month 7</span>
-                <span>Month 8</span>
+            
+            <div class="growth-chart">
+              <div class="chart-container">
+                <canvas ref="chartCanvas" class="chart-canvas" width="400" height="300"></canvas>
               </div>
             </div>
           </div>
@@ -191,39 +217,87 @@
           <h2 class="section-title">ROADMAP</h2>
         </div>
         
+        <!-- Flowing Wave Background -->
+        <div class="roadmap-waves">
+          <svg class="wave-svg" viewBox="0 0 1200 300" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#00f5ff;stop-opacity:0.8" />
+                <stop offset="50%" style="stop-color:#4cc9f0;stop-opacity:0.6" />
+                <stop offset="100%" style="stop-color:#0077b6;stop-opacity:0.4" />
+              </linearGradient>
+              <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#4cc9f0;stop-opacity:0.6" />
+                <stop offset="50%" style="stop-color:#0077b6;stop-opacity:0.4" />
+                <stop offset="100%" style="stop-color:#023e8a;stop-opacity:0.3" />
+              </linearGradient>
+            </defs>
+            
+            <!-- First wave -->
+            <path d="M0,150 Q300,100 600,120 T1200,100 L1200,300 L0,300 Z" fill="url(#waveGradient1)" />
+            
+            <!-- Second wave -->
+            <path d="M0,180 Q200,130 500,150 T1000,140 T1200,160 L1200,300 L0,300 Z" fill="url(#waveGradient2)" />
+            
+            <!-- Connection line -->
+            <path d="M100,200 Q400,160 700,180 Q1000,200 1100,170" stroke="#00f5ff" stroke-width="2" fill="none" opacity="0.8" />
+          </svg>
+        </div>
+        
+        <!-- Timeline Milestones -->
         <div class="roadmap-timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h3 class="timeline-title">Launch Phase</h3>
-              <ul class="timeline-tasks">
-                <li>Initial Staking & Governance launch</li>
-                <li>Technical and Platform launch</li>
-                <li>Protocol implementation</li>
+          <div class="timeline-milestone" style="left: 8%">
+            <div class="milestone-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="milestone-content">
+              <h3 class="milestone-title">Launch Phase</h3>
+              <ul class="milestone-tasks">
+                <li>Token issuance & exchange listings.</li>
+                <li>Whitepaper publication.</li>
               </ul>
             </div>
           </div>
           
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h3 class="timeline-title">Expansion Phase</h3>
-              <ul class="timeline-tasks">
-                <li>Governance smart contracts</li>
-                <li>Community token launch</li>
-                <li>Advanced governance features</li>
+          <div class="timeline-milestone" style="left: 35%">
+            <div class="milestone-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="milestone-content">
+              <h3 class="milestone-title">Expansion Phase</h3>
+              <ul class="milestone-tasks">
+                <li>Governance portal launch.</li>
+                <li>Member growth campaigns.</li>
               </ul>
             </div>
           </div>
           
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <h3 class="timeline-title">Scaling</h3>
-              <ul class="timeline-tasks">
-                <li>Cross-chain Bridge</li>
-                <li>Mobile application</li>
-                <li>Advanced security controls</li>
+          <div class="timeline-milestone" style="left: 62%">
+            <div class="milestone-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="milestone-content">
+              <h3 class="milestone-title">Utility Rollout</h3>
+              <ul class="milestone-tasks">
+                <li>Token payment integrations.</li>
+                <li>Service discounts enabled.</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="timeline-milestone" style="left: 88%">
+            <div class="milestone-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+            <div class="milestone-content">
+              <h3 class="milestone-title">Scaling</h3>
+              <ul class="milestone-tasks">
+                <li>New exchange listings.</li>
+                <li>Ecosystem partnerships.</li>
               </ul>
             </div>
           </div>
@@ -322,42 +396,33 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js/auto';
 
 const openFaqs = ref<number[]>([])
+const chartCanvas = ref<HTMLCanvasElement | null>(null)
+let chartInstance: any = null
 
 const faqs = [
   {
-    question: "What is the purpose of this governance token?",
-    answer: "Our governance token enables decentralized decision-making and gives holders voting rights on key protocol decisions."
+    question: "What is the main purpose of this governance token?",
+    answer: "To enable community participation in decision-making and provide utility in payments and discounts."
   },
   {
-    question: "How does the staking mechanism work?",
-    answer: "Users can stake their tokens to earn rewards and participate in governance decisions with increased voting power."
+    question: "Is the token value guaranteed to increase with BTC?",
+    answer: "No. The correlation with BTC is a treasury strategy, but price movements are uncertain."
   },
   {
-    question: "What are the tokenomics of the project?",
-    answer: "The token has multiple utilities including governance, staking rewards, payment discounts, and access to premium features."
+    question: "How are monthly BTC purchases calculated?",
+    answer: "By multiplying the number of members by ¥5,000 each month."
   },
   {
-    question: "How can I participate in governance?",
-    answer: "Token holders can submit proposals, vote on existing proposals, and delegate their voting power to other community members."
+    question: "Is this token a security?",
+    answer: "No. It is structured to avoid being classified as a security, with utility functions in governance and services."
   },
   {
-    question: "What exchanges is the token listed on?",
-    answer: "Our token is currently listed on CoinGecko, DEX, Uniswap, BitGet Token, and PancakeSwap."
-  },
-  {
-    question: "How does the treasury strategy work?",
-    answer: "We implement a transparent Reserve Ratio with a strategically designed SSLM model for optimal fund management."
-  },
-  {
-    question: "What are the benefits of holding governance tokens?",
-    answer: "Benefits include voting rights, staking rewards, payment discounts, and participation in the ecosystem's growth."
-  },
-  {
-    question: "How secure is the platform?",
-    answer: "Our platform uses advanced security measures including smart contract audits and multi-signature wallets."
+    question: "Where can I trade the token?",
+    answer: "On selected overseas exchanges (to be announced)."
   }
 ]
 
@@ -369,6 +434,131 @@ const toggleFaq = (index: number) => {
     openFaqs.value.push(index)
   }
 }
+
+const initChart = async () => {
+  try {
+    console.log('Starting chart initialization...')
+    
+    if (!chartCanvas.value) {
+      console.error('Canvas element not found')
+      return
+    }
+    
+    console.log('Canvas element found, importing Chart.js...')
+    
+    // Destroy existing chart if any
+    if (chartInstance) {
+      chartInstance.destroy()
+      chartInstance = null
+    }
+    
+    // Dynamic import Chart.js
+    console.log('Chart.js imported successfully')
+    
+    // Register components
+    Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
+    
+    const ctx = chartCanvas.value.getContext('2d')
+    if (!ctx) {
+      console.error('Canvas context not available')
+      return
+    }
+    
+    console.log('Creating chart instance...')
+    
+    chartInstance = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['1月', '2月', '3月', '4月'],
+        datasets: [
+          {
+            label: 'A类',
+            data: [30, 35, 85, 60],
+            backgroundColor: '#f39c12',
+            borderColor: '#f1c40f',
+            borderWidth: 1
+          },
+          {
+            label: '类别',
+            data: [65, 70, 80, 95],
+            backgroundColor: '#00f5ff',
+            borderColor: '#4cc9f0',
+            borderWidth: 1
+          },
+          {
+            label: 'C类',
+            data: [45, 25, 75, 35],
+            backgroundColor: '#27ae60',
+            borderColor: '#2ecc71',
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              color: '#b8c0d4',
+              font: {
+                size: 12
+              },
+              padding: 20,
+              usePointStyle: true
+            }
+          },
+          tooltip: {
+            backgroundColor: 'rgba(26, 31, 53, 0.9)',
+            titleColor: '#00f5ff',
+            bodyColor: '#b8c0d4'
+          }
+        },
+        scales: {
+          x: {
+            grid: {
+              display: false
+            },
+            ticks: {
+              color: '#b8c0d4'
+            }
+          },
+          y: {
+            beginAtZero: true,
+            max: 100,
+            grid: {
+              color: 'rgba(184, 192, 212, 0.1)'
+            },
+            ticks: {
+              color: '#b8c0d4',
+              stepSize: 20
+            }
+          }
+        }
+      }
+    })
+    
+    console.log('Chart created successfully:', chartInstance)
+    
+  } catch (error) {
+    console.error('Error initializing chart:', error)
+  }
+}
+
+onMounted(() => {
+  // Initialize chart after DOM is mounted
+  setTimeout(() => {
+    console.log('DOM mounted, initializing chart...')
+    initChart()
+  }, 300)
+})
+
+onUnmounted(() => {
+  if (chartInstance) {
+    chartInstance.destroy()
+  }
+})
 </script>
 
 <style scoped>
@@ -577,18 +767,197 @@ const toggleFaq = (index: number) => {
 /* Token Economy Section */
 .token-economy-section {
   background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(0, 245, 255, 0.05));
+  padding: 4rem 0;
 }
 
-.economy-details {
-  margin-top: 2rem;
+.token-3d-container {
+  position: relative;
+  width: 400px;
+  height: 350px;
+  margin: 0 auto;
+}
+
+.token-platform {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 40px;
+}
+
+.platform-base {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, rgba(0, 245, 255, 0.3), rgba(76, 201, 240, 0.2));
+  border-radius: 50%;
+  transform: perspective(100px) rotateX(60deg);
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.4);
+}
+
+.platform-glow {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle, rgba(0, 245, 255, 0.2), transparent);
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.token-coin {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.coin-btc {
+  background: linear-gradient(45deg, #f7931a, #ff6b35);
+  top: 20%;
+  left: 10%;
+  animation: float1 6s ease-in-out infinite;
+}
+
+.coin-eth {
+  background: linear-gradient(45deg, #627eea, #8a92b2);
+  top: 15%;
+  right: 15%;
+  animation: float2 7s ease-in-out infinite;
+}
+
+.coin-dollar {
+  background: linear-gradient(45deg, #22c55e, #16a34a);
+  bottom: 30%;
+  left: 20%;
+  animation: float3 5s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-180deg); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(360deg); }
+}
+
+.growth-arrow {
+  position: absolute;
+  top: 25%;
+  right: 20%;
+  width: 80px;
+  height: 100px;
+}
+
+.arrow-line {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 3px;
+  height: 80px;
+  background: linear-gradient(to top, var(--color-primary), var(--color-secondary));
+  transform: translateX(-50%) rotate(-15deg);
+  border-radius: 2px;
+}
+
+.arrow-head {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid var(--color-secondary);
+  transform: rotate(-15deg);
+}
+
+.data-visualization {
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  width: 60px;
+  height: 80px;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  height: 100%;
+  gap: 2px;
+}
+
+.bar {
+  background: linear-gradient(to top, var(--color-primary), var(--color-secondary));
+  width: 8px;
+  border-radius: 2px 2px 0 0;
+  animation: barGrow 2s ease-out;
+  box-shadow: 0 0 5px rgba(0, 245, 255, 0.3);
+}
+
+@keyframes barGrow {
+  from { height: 0%; }
+  to { height: var(--height, 100%); }
+}
+
+.economy-timeline {
+  position: relative;
+  padding-left: 0;
+  max-width: 600px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 200px; /* Position after the labels */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
 }
 
 .economy-item {
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: rgba(0, 245, 255, 0.1);
-  border-radius: 0.5rem;
-  border-left: 4px solid var(--color-primary);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: relative;
+  gap: 2rem;
+}
+
+.item-marker {
+  position: absolute;
+  left: 194px; /* Align with the timeline line */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  border-radius: 50%;
+  border: 2px solid var(--color-background);
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
+  z-index: 2;
 }
 
 .item-label {
@@ -597,252 +966,344 @@ const toggleFaq = (index: number) => {
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
+  text-align: right;
+  padding-right: 1rem;
 }
 
 .item-description {
   color: var(--color-text-secondary);
   line-height: 1.6;
-}
-
-.economy-illustration {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 0 auto;
-}
-
-.token-flow {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.flow-node {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, var(--color-accent), var(--color-primary));
-  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-}
-
-.node-1 {
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: pulse 3s ease-in-out infinite;
-}
-
-.node-2 {
-  bottom: 30%;
-  left: 20%;
-  animation: pulse 3s ease-in-out infinite 1s;
-}
-
-.node-3 {
-  bottom: 30%;
-  right: 20%;
-  animation: pulse 3s ease-in-out infinite 2s;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); }
-  50% { transform: scale(1.1); box-shadow: 0 0 30px rgba(0, 255, 136, 0.5); }
+  font-size: 0.95rem;
+  padding-left: 1rem;
 }
 
 /* Growth Model Section */
 .growth-model-section {
   background: var(--color-surface);
+  padding: 4rem 0;
+}
+
+.growth-content {
+  align-items: stretch;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.growth-info-panel {
+  background: linear-gradient(145deg, rgba(26, 31, 53, 0.95), rgba(42, 47, 69, 0.9));
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 0.75rem;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.bullet {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.info-text {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.growth-table {
+  margin-top: 2rem;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: linear-gradient(145deg, rgba(26, 31, 53, 0.95), rgba(42, 47, 69, 0.9));
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.data-table th {
+  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  color: var(--color-background);
+  padding: 0.75rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.data-table td {
+  padding: 0.75rem;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tr:nth-child(even) {
+  background: rgba(0, 245, 255, 0.05);
+}
+
+.data-table tr:hover {
+  background: rgba(0, 245, 255, 0.1);
+  transition: background 0.3s ease;
+}
+
+.data-table td:first-child {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.data-table td:last-child {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* Growth Model Section */
+.growth-model-section {
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(76, 201, 240, 0.05));
+}
+
+.growth-card {
+  /* background: linear-gradient(145deg, rgba(26, 31, 53, 0.95), rgba(42, 47, 69, 0.9)); */
+  /* border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); */
 }
 
 .growth-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+  min-height: 400px;
 }
 
-.growth-stats {
-  background: linear-gradient(145deg, var(--color-surface-light), var(--color-surface));
+.growth-text {
+  background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(76, 201, 240, 0.05));
   padding: 2rem;
-  border-radius: 1rem;
-  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.stat-item {
-  margin-bottom: 1rem;
+.growth-info-panel {
+  width: 100%;
 }
 
-.stat-label {
-  font-size: 0.875rem;
-  color: var(--color-text-secondary);
-  margin-bottom: 0.25rem;
-}
-
-.stat-value {
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
   font-size: 1rem;
-  color: var(--color-text);
-  font-weight: 500;
+  line-height: 1.6;
+}
+
+.bullet {
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.info-text {
+  color: var(--color-text-secondary);
 }
 
 .growth-chart {
-  background: linear-gradient(145deg, var(--color-surface-light), var(--color-surface));
+  background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(52, 152, 219, 0.05));
   padding: 2rem;
-  border-radius: 1rem;
-  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .chart-container {
   position: relative;
+  height: 350px;
+  width: 100%;
+  max-width: 500px;
 }
 
-.chart-bars {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  height: 200px;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.chart-bar {
-  background: linear-gradient(to top, var(--color-primary), var(--color-secondary));
-  width: 20px;
-  border-radius: 2px 2px 0 0;
-  animation: growUp 2s ease-out;
-  box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
-}
-
-@keyframes growUp {
-  from { height: 0%; }
-  to { height: var(--height, 100%); }
-}
-
-.chart-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.75rem;
-  color: var(--color-text-secondary);
+.chart-canvas {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /* Roadmap Section */
 .roadmap-section {
-  background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), transparent);
+  background: linear-gradient(135deg, #0a1428 0%, #1a1f35 50%, #0f1729 100%);
+  background-image: url('path/to/roadmap-bg.jpg'); /* Add your background image path here */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  padding: 4rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.roadmap-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(10, 20, 40, 0.7) 0%, rgba(26, 31, 53, 0.6) 50%, rgba(15, 23, 41, 0.8) 100%);
+  z-index: 1;
+}
+
+.roadmap-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.roadmap-waves {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: 2rem 0;
+  z-index: 3;
+}
+
+.wave-svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.wave-svg path {
+  animation: waveFlow 8s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.3));
+}
+
+.wave-svg path:nth-child(4) {
+  animation-delay: 1s;
+}
+
+.wave-svg path:nth-child(5) {
+  animation-delay: 2s;
+}
+
+@keyframes waveFlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .roadmap-timeline {
   position: relative;
-  max-width: 800px;
-  margin: 0 auto;
+  width: 100%;
+  height: 400px;
+  margin-top: -150px;
+  z-index: 4;
 }
 
-.roadmap-timeline::before {
-  content: '';
+.timeline-milestone {
   position: absolute;
-  left: 50%;
   top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
-  transform: translateX(-50%);
-}
-
-.timeline-item {
+  transform: translateX(0); /* Remove centering */
+  z-index: 10;
   display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.milestone-marker {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-bottom: 3rem;
-  position: relative;
+  flex-shrink: 0;
 }
 
-.timeline-item:nth-child(odd) {
-  flex-direction: row;
-}
-
-.timeline-item:nth-child(odd) .timeline-content {
-  margin-right: auto;
-  margin-left: 0;
-  text-align: left;
-}
-
-.timeline-item:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-  margin-left: auto;
-  margin-right: 0;
-  text-align: right;
-}
-
-.timeline-marker {
-  width: 20px;
-  height: 20px;
+.marker-dot {
+  width: 16px;
+  height: 16px;
   background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
   border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
   border: 3px solid var(--color-background);
-}
-
-.timeline-content {
-  background: linear-gradient(145deg, var(--color-surface), var(--color-surface-light));
-  padding: 1.5rem;
-  border-radius: 1rem;
-  border: 1px solid var(--color-border);
-  width: 45%;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.6);
   position: relative;
+  z-index: 2;
 }
 
-.timeline-content::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  transform: translateY(-50%);
+.marker-line {
+  width: 2px;
+  height: 120px;
+  background: linear-gradient(to bottom, var(--color-primary), transparent);
+  margin-top: -2px;
 }
 
-.timeline-item:nth-child(odd) .timeline-content::before {
-  right: -20px;
-  border-left-color: var(--color-border);
+.milestone-content {
+  background: linear-gradient(145deg, rgba(26, 31, 53, 0.95), rgba(42, 47, 69, 0.9));
+  /* border: 1px solid var(--color-border); */
+  border-radius: 1rem;
+  padding: 1.5rem;
+  min-width: 200px;
+  max-width: 250px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  position: relative;
+  margin-top: 40px; /* Align with marker dot */
 }
 
-.timeline-item:nth-child(even) .timeline-content::before {
-  left: -20px;
-  border-right-color: var(--color-border);
-}
 
-.timeline-title {
+.milestone-title {
   color: var(--color-primary);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  text-align: left; /* Left align instead of center */
 }
 
-.timeline-tasks {
+.milestone-tasks {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.timeline-tasks li {
+.milestone-tasks li {
   color: var(--color-text-secondary);
+  font-size: 0.875rem;
   margin-bottom: 0.5rem;
   padding-left: 1rem;
   position: relative;
+  line-height: 1.4;
 }
 
-.timeline-tasks li::before {
-  content: '▶';
+.milestone-tasks li::before {
+  content: '•';
   position: absolute;
   left: 0;
   color: var(--color-primary);
-  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 /* Exchange Section */
@@ -1104,16 +1565,26 @@ const toggleFaq = (index: number) => {
   }
   
   .growth-stats,
-  .growth-chart {
+  .growth-chart,
+  .growth-info-panel {
     padding: 1.5rem;
   }
   
   .chart-bars {
     height: 150px;
+    margin: 0 20px 15px 30px;
+  }
+  
+  .chart-y-axis {
+    bottom: 30px;
+  }
+  
+  .chart-labels {
+    margin: 0 20px;
   }
   
   .treasury-illustration,
-  .economy-illustration {
+  .token-3d-container {
     width: 300px;
     height: 250px;
   }
@@ -1121,6 +1592,22 @@ const toggleFaq = (index: number) => {
   .floating-coin,
   .flow-node {
     transform: scale(0.8);
+  }
+  
+  .token-coin {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .growth-arrow {
+    width: 60px;
+    height: 80px;
+  }
+  
+  .data-visualization {
+    width: 50px;
+    height: 60px;
   }
   
   .faq-question {
@@ -1133,44 +1620,37 @@ const toggleFaq = (index: number) => {
   }
   
   /* Roadmap mobile optimization */
+  .roadmap-waves {
+    height: 200px;
+  }
+  
   .roadmap-timeline {
-    padding-left: 0;
+    height: 350px;
+    margin-top: -100px;
   }
   
-  .roadmap-timeline::before {
-    left: 20px;
-  }
-  
-  .timeline-item {
-    padding-left: 50px;
+  .timeline-milestone {
+    position: relative;
+    left: auto !important;
+    transform: none;
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
-  .timeline-marker {
-    left: 20px;
-    width: 16px;
-    height: 16px;
-    border-width: 2px;
+  .milestone-marker {
+    margin-bottom: 1rem;
   }
   
-  .timeline-content {
-    padding: 1.25rem;
-    border-radius: 0.75rem;
+  .marker-line {
+    height: 0;
   }
   
-  .timeline-content::before {
-    left: -15px;
-    border-width: 8px;
-  }
-  
-  .timeline-title {
-    font-size: 1.125rem;
-    margin-bottom: 0.75rem;
-  }
-  
-  .timeline-tasks li {
-    font-size: 0.9rem;
-    margin-bottom: 0.375rem;
+  .milestone-content {
+    min-width: auto;
+    max-width: 100%;
+    width: 100%;
   }
 }
 
@@ -1264,37 +1744,76 @@ const toggleFaq = (index: number) => {
   }
   
   .growth-stats,
-  .growth-chart {
+  .growth-chart,
+  .growth-info-panel {
     padding: 1.25rem;
   }
   
-  .stat-item {
-    margin-bottom: 0.875rem;
+  .growth-content {
+    grid-template-columns: 1fr;
   }
   
-  .stat-label {
-    font-size: 0.75rem;
+  .growth-text,
+  .growth-chart {
+    padding: 1.5rem;
   }
   
-  .stat-value {
-    font-size: 0.875rem;
+  .chart-container {
+    height: 250px;
+    max-width: 100%;
+  }
+  
+  .chart-container {
+    height: 240px;
   }
   
   .chart-bars {
     height: 120px;
-    gap: 0.25rem;
+    gap: 0.5rem;
+    margin: 0 15px 15px 25px;
   }
   
   .chart-bar {
     width: 15px;
   }
   
+  .bar-group {
+    gap: 1px;
+  }
+  
   .chart-labels {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
+    margin: 0 15px;
+  }
+  
+  .chart-legend {
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+  
+  .legend-item span {
+    font-size: 0.7rem;
+  }
+  
+  .info-item {
+    margin-bottom: 1.25rem;
+  }
+  
+  .info-text {
+    font-size: 0.85rem;
+  }
+  
+  .data-table {
+    font-size: 0.8rem;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 0.5rem 0.25rem;
   }
   
   .treasury-illustration,
-  .economy-illustration {
+  .token-3d-container {
     width: 100%;
     height: 200px;
     max-width: 280px;
@@ -1325,6 +1844,59 @@ const toggleFaq = (index: number) => {
     transform: scale(0.7);
   }
   
+  .token-coin {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+  
+  .growth-arrow {
+    width: 50px;
+    height: 60px;
+  }
+  
+  .arrow-line {
+    height: 50px;
+  }
+  
+  .data-visualization {
+    width: 40px;
+    height: 50px;
+  }
+  
+  .economy-timeline {
+    padding-left: 0;
+  }
+  
+  .timeline-line {
+    left: 20px;
+  }
+  
+  .economy-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding-left: 50px;
+  }
+  
+  .item-marker {
+    left: 14px;
+    top: 0.5rem;
+    transform: none;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .item-label {
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .item-description {
+    padding-left: 0;
+  }
+  
   .faq-question {
     padding: 1rem;
     font-size: 0.95rem;
@@ -1347,50 +1919,103 @@ const toggleFaq = (index: number) => {
   }
   
   /* Roadmap mobile optimization */
-  .roadmap-timeline::before {
-    left: 15px;
+  .roadmap-section {
+    padding: 3rem 0 4rem;
   }
   
-  .timeline-item {
-    padding-left: 40px;
-    margin-bottom: 1.5rem;
+  .roadmap-waves {
+    height: 150px;
+    margin: 1rem 0;
   }
   
-  .timeline-marker {
-    left: 15px;
-    width: 14px;
-    height: 14px;
+  .roadmap-timeline {
+    height: auto;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .timeline-milestone {
+    position: relative;
+    left: auto !important;
+    transform: none;
+    margin-bottom: 0;
+  }
+  
+  .milestone-marker {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+  }
+  
+  .marker-dot {
+    width: 12px;
+    height: 12px;
     border-width: 2px;
   }
   
-  .timeline-content {
+  .marker-line {
+    width: 0;
+    height: 0;
+  }
+  
+  .milestone-content {
     padding: 1rem;
-    border-radius: 0.5rem;
+    max-width: 100%;
   }
   
-  .timeline-content::before {
-    left: -12px;
-    border-width: 6px;
-  }
-  
-  .timeline-title {
+  .milestone-title {
     font-size: 1rem;
     margin-bottom: 0.5rem;
   }
   
-  .timeline-tasks {
-    margin: 0;
-  }
-  
-  .timeline-tasks li {
+  .milestone-tasks li {
     font-size: 0.8rem;
     margin-bottom: 0.25rem;
-    padding-left: 0.75rem;
-    line-height: 1.4;
+    line-height: 1.3;
   }
   
-  .timeline-tasks li::before {
-    font-size: 0.6rem;
+  /* Growth Model mobile optimization */
+  .growth-info-panel,
+  .growth-chart {
+    padding: 1rem;
+  }
+  
+  .chart-container {
+    height: 200px;
+  }
+  
+  .chart-bars {
+    height: 100px;
+    margin: 0 10px 10px 20px;
+  }
+  
+  .chart-bar {
+    width: 12px;
+  }
+  
+  .info-text {
+    font-size: 0.8rem;
+  }
+  
+  .chart-legend {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .data-table {
+    font-size: 0.75rem;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 0.4rem 0.2rem;
+  }
+  
+  .growth-table {
+    margin-top: 1.5rem;
+    overflow-x: auto;
   }
 }
 
@@ -1426,56 +2051,79 @@ const toggleFaq = (index: number) => {
   }
   
   .treasury-illustration,
-  .economy-illustration {
+  .token-3d-container {
     height: 160px;
   }
   
-  .growth-stats,
-  .growth-chart {
-    padding: 1rem;
+  .token-coin {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+  
+  .growth-arrow {
+    width: 40px;
+    height: 50px;
+  }
+  
+  .data-visualization {
+    width: 35px;
+    height: 40px;
+  }
+  
+  .economy-timeline {
+    padding-left: 0;
+  }
+  
+  .timeline-line {
+    left: 15px;
+  }
+  
+  .economy-item {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+    padding-left: 40px;
+  }
+  
+  .item-marker {
+    left: 9px;
+    top: 0.25rem;
+    transform: none;
+    width: 10px;
+    height: 10px;
+  }
+  
+  .item-label {
+    text-align: left;
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .item-description {
+    font-size: 0.85rem;
+    padding-left: 0;
   }
   
   /* Roadmap extra small screens */
-  .roadmap-timeline::before {
-    left: 12px;
+  .roadmap-section {
+    padding: 2rem 0 3rem;
   }
   
-  .timeline-item {
-    padding-left: 35px;
-    margin-bottom: 1.25rem;
+  .roadmap-waves {
+    height: 120px;
   }
   
-  .timeline-marker {
-    left: 12px;
-    width: 12px;
-    height: 12px;
-    border-width: 1px;
-  }
-  
-  .timeline-content {
+  .milestone-content {
     padding: 0.875rem;
-    border-radius: 0.5rem;
   }
   
-  .timeline-content::before {
-    left: -10px;
-    border-width: 5px;
-  }
-  
-  .timeline-title {
+  .milestone-title {
     font-size: 0.95rem;
-    margin-bottom: 0.5rem;
   }
   
-  .timeline-tasks li {
+  .milestone-tasks li {
     font-size: 0.75rem;
-    margin-bottom: 0.2rem;
-    padding-left: 0.6rem;
-    line-height: 1.3;
-  }
-  
-  .timeline-tasks li::before {
-    font-size: 0.5rem;
   }
 }
 </style>
