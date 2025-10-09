@@ -4,48 +4,61 @@
     <section class="section governance-token-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">WHAT IS OUR GOVERNANCE TOKEN?</h2>
+          <h2 class="section-title">
+            {{ $t("sections.governanceToken.title") }}
+          </h2>
           <p class="section-subtitle">
-            Our governance token provides equal and utilize similar to shareholder participation in a decentralized environment
-            where holders have full control over key strategic decisions.
+            {{ $t("sections.governanceToken.subtitle") }}
           </p>
         </div>
-        
+
         <div class="token-features">
           <div class="feature-card">
             <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 12l2 2 4-4"/>
-                <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
-              </svg>
+              <img
+                src="@/assets/token_1.png"
+                alt="Token Icon 1"
+                class="token-icon"
+              />
             </div>
-            <h3 class="feature-title">Decentralized with our DAO Gov</h3>
-            <p class="feature-description">Community-driven governance ensuring transparent decision-making</p>
+            <h3 class="feature-title">
+              {{ $t("sections.governanceToken.feature1.title") }}
+            </h3>
+            <p class="feature-description">
+              {{ $t("sections.governanceToken.feature1.description") }}
+            </p>
           </div>
-          
+
           <div class="feature-card">
             <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="8.5" cy="7" r="4"/>
-                <path d="M20 8v6"/>
-                <path d="M23 11l-3-3-3 3"/>
-              </svg>
+              <img
+                src="@/assets/token_2.png"
+                alt="Token Icon 2"
+                class="token-icon"
+              />
             </div>
-            <h3 class="feature-title">Participate in Improve Transparency</h3>
-            <p class="feature-description">Active participation in governance decisions with full transparency</p>
+            <h3 class="feature-title">
+              {{ $t("sections.governanceToken.feature2.title") }}
+            </h3>
+            <p class="feature-description">
+              {{ $t("sections.governanceToken.feature2.description") }}
+            </p>
           </div>
-          
+
           <div class="feature-card">
             <div class="feature-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <path d="M21 15l-5-5L5 21"/>
-              </svg>
+              <img
+                src="@/assets/token_3.png"
+                alt="Token Icon 3"
+                class="token-icon"
+              />
             </div>
-            <h3 class="feature-title">Stake Locked for Payments, Discounts, and Voting Power</h3>
-            <p class="feature-description">Multiple utility functions within the ecosystem</p>
+            <h3 class="feature-title">
+              {{ $t("sections.governanceToken.feature3.title") }}
+            </h3>
+            <p class="feature-description">
+              {{ $t("sections.governanceToken.feature3.description") }}
+            </p>
           </div>
         </div>
       </div>
@@ -56,37 +69,37 @@
       <div class="container">
         <div class="section-content">
           <div class="section-text">
-            <h2 class="section-title">TREASURY STRATEGY</h2>
+            <h2 class="section-title">
+              {{ $t("sections.treasuryStrategy.title") }}
+            </h2>
             <p class="section-description">
-              We adopt a transparent Reserve Ratio with strategically SSLM model.
+              {{ $t("sections.treasuryStrategy.description") }}
             </p>
             <div class="strategy-points">
               <div class="strategy-point">
                 <span class="point-bullet">•</span>
-                <span>Highly flexible and diverse custody vs staked BTC</span>
+                <span>{{ $t("sections.treasuryStrategy.point1") }}</span>
               </div>
               <div class="strategy-point">
                 <span class="point-bullet">•</span>
-                <span>The treasury purchase amounts = Number of stakers x All Gov</span>
+                <span>{{ $t("sections.treasuryStrategy.point2") }}</span>
               </div>
               <div class="strategy-point">
                 <span class="point-bullet">•</span>
-                <span>Highly liquid public instruments for strategically liquid Gov tokens</span>
+                <span>{{ $t("sections.treasuryStrategy.point3") }}</span>
               </div>
               <div class="strategy-point">
                 <span class="point-bullet">•</span>
-                <span>Clear lined & designed to periodically connect with Dev participants until Gov snapshot</span>
+                <span>{{ $t("sections.treasuryStrategy.point4") }}</span>
               </div>
             </div>
           </div>
           <div class="section-visual">
-            <div class="treasury-illustration">
-              <div class="floating-elements">
-                <div class="floating-coin coin-1"></div>
-                <div class="floating-coin coin-2"></div>
-                <div class="floating-coin coin-3"></div>
-              </div>
-            </div>
+            <img
+              src="@/assets/treasury.png"
+              alt="Treasury Strategy"
+              class="treasury-image"
+            />
           </div>
         </div>
       </div>
@@ -96,74 +109,60 @@
     <section class="section token-economy-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">TOKEN ECONOMY</h2>
+          <h2 class="section-title">{{ $t("sections.tokenEconomy.title") }}</h2>
         </div>
-        
+
         <div class="section-content">
           <div class="section-visual">
-            <div class="economy-illustration">
-              <!-- 3D Token Visualization -->
-              <div class="token-3d-container">
-                <div class="token-platform">
-                  <div class="platform-base"></div>
-                  <div class="platform-glow"></div>
-                </div>
-                
-                <div class="floating-elements">
-                  <div class="token-coin coin-btc">
-                    <span class="coin-symbol">₿</span>
-                  </div>
-                  <div class="token-coin coin-eth">
-                    <span class="coin-symbol">Ξ</span>
-                  </div>
-                  <div class="token-coin coin-dollar">
-                    <span class="coin-symbol">$</span>
-                  </div>
-                </div>
-                
-                <div class="growth-arrow">
-                  <div class="arrow-line"></div>
-                  <div class="arrow-head"></div>
-                </div>
-                
-                <div class="data-visualization">
-                  <div class="chart-bars">
-                    <div class="bar" style="height: 40%"></div>
-                    <div class="bar" style="height: 70%"></div>
-                    <div class="bar" style="height: 90%"></div>
-                    <div class="bar" style="height: 60%"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <img
+              src="@/assets/economy.png"
+              alt="Token Economy"
+              class="economy-image"
+            />
           </div>
-          
+
           <div class="section-text">
             <div class="economy-timeline">
               <div class="timeline-line"></div>
-              
+
               <div class="economy-item">
                 <div class="item-marker"></div>
-                <div class="item-label">UTILITY</div>
-                <div class="item-description">Governance voting, payments, discounts, and access to services.</div>
+                <div class="item-label">
+                  {{ $t("sections.tokenEconomy.utility.label") }}
+                </div>
+                <div class="item-description">
+                  {{ $t("sections.tokenEconomy.utility.description") }}
+                </div>
               </div>
-              
+
               <div class="economy-item">
                 <div class="item-marker"></div>
-                <div class="item-label">GROWTH MODEL</div>
-                <div class="item-description">Starting with 1,000 members, +3,000 each month until 10,000, then +500 per month.</div>
+                <div class="item-label">
+                  {{ $t("sections.tokenEconomy.growthModel.label") }}
+                </div>
+                <div class="item-description">
+                  {{ $t("sections.tokenEconomy.growthModel.description") }}
+                </div>
               </div>
-              
+
               <div class="economy-item">
                 <div class="item-marker"></div>
-                <div class="item-label">VALUE ASSUMPTION</div>
-                <div class="item-description">Hypothetically, BTC price increases 5% monthly → token value follows similar growth.</div>
+                <div class="item-label">
+                  {{ $t("sections.tokenEconomy.valueAssumption.label") }}
+                </div>
+                <div class="item-description">
+                  {{ $t("sections.tokenEconomy.valueAssumption.description") }}
+                </div>
               </div>
-              
+
               <div class="economy-item">
                 <div class="item-marker"></div>
-                <div class="item-label">IMPORTANT</div>
-                <div class="item-description">These assumptions are illustrative scenarios, not guarantees.</div>
+                <div class="item-label">
+                  {{ $t("sections.tokenEconomy.important.label") }}
+                </div>
+                <div class="item-description">
+                  {{ $t("sections.tokenEconomy.important.description") }}
+                </div>
               </div>
             </div>
           </div>
@@ -175,34 +174,71 @@
     <section class="section growth-model-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">GROWTH MODEL</h2>
-          <p class="section-subtitle">(ILLUSTRATIVE EXAMPLE)</p>
+          <h2 class="section-title">{{ $t("sections.growthModel.title") }}</h2>
+          <p class="section-subtitle">
+            {{ $t("sections.growthModel.subtitle") }}
+          </p>
         </div>
-        
+
         <div class="growth-card">
           <div class="growth-content">
             <div class="growth-text">
               <div class="info-panel">
                 <div class="info-item">
                   <span class="bullet">•</span>
-                  <span class="info-text">Month 1: 1,000 members x ¥5,000 = ¥5,000,000 in BTC.</span>
+                  <span class="info-text">{{
+                    $t("sections.growthModel.month1")
+                  }}</span>
                 </div>
-                
+
                 <div class="info-item">
                   <span class="bullet">•</span>
-                  <span class="info-text">Month 2: 4,000 members x ¥5,000 = ¥20,000,000 in BTC.</span>
+                  <span class="info-text">{{
+                    $t("sections.growthModel.month2")
+                  }}</span>
                 </div>
-                
+
                 <div class="info-item">
                   <span class="bullet">•</span>
-                  <span class="info-text">... and so on.</span>
+                  <span class="info-text">{{
+                    $t("sections.growthModel.andSoOn")
+                  }}</span>
                 </div>
               </div>
             </div>
-            
+
             <div class="growth-chart">
               <div class="chart-container">
-                <canvas ref="chartCanvas" class="chart-canvas" width="400" height="300"></canvas>
+                <div class="chart-visual">
+                  <div class="chart-bars">
+                    <div class="bar" style="height: 30%"></div>
+                    <div class="bar" style="height: 55%"></div>
+                    <div class="bar" style="height: 80%"></div>
+                    <div class="bar" style="height: 95%"></div>
+                    <div class="bar" style="height: 70%"></div>
+                    <div class="bar" style="height: 85%"></div>
+                  </div>
+                  <div class="chart-labels">
+                    <span>{{
+                      $t("sections.growthModel.chartLabels.jan")
+                    }}</span>
+                    <span>{{
+                      $t("sections.growthModel.chartLabels.feb")
+                    }}</span>
+                    <span>{{
+                      $t("sections.growthModel.chartLabels.mar")
+                    }}</span>
+                    <span>{{
+                      $t("sections.growthModel.chartLabels.apr")
+                    }}</span>
+                    <span>{{
+                      $t("sections.growthModel.chartLabels.may")
+                    }}</span>
+                    <span>{{
+                      $t("sections.growthModel.chartLabels.jun")
+                    }}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -214,93 +250,11 @@
     <section class="section roadmap-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">ROADMAP</h2>
+          <h2 class="section-title">{{ $t("sections.roadmap.title") }}</h2>
         </div>
-        
-        <!-- Flowing Wave Background -->
-        <div class="roadmap-waves">
-          <svg class="wave-svg" viewBox="0 0 1200 300" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#00f5ff;stop-opacity:0.8" />
-                <stop offset="50%" style="stop-color:#4cc9f0;stop-opacity:0.6" />
-                <stop offset="100%" style="stop-color:#0077b6;stop-opacity:0.4" />
-              </linearGradient>
-              <linearGradient id="waveGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#4cc9f0;stop-opacity:0.6" />
-                <stop offset="50%" style="stop-color:#0077b6;stop-opacity:0.4" />
-                <stop offset="100%" style="stop-color:#023e8a;stop-opacity:0.3" />
-              </linearGradient>
-            </defs>
-            
-            <!-- First wave -->
-            <path d="M0,150 Q300,100 600,120 T1200,100 L1200,300 L0,300 Z" fill="url(#waveGradient1)" />
-            
-            <!-- Second wave -->
-            <path d="M0,180 Q200,130 500,150 T1000,140 T1200,160 L1200,300 L0,300 Z" fill="url(#waveGradient2)" />
-            
-            <!-- Connection line -->
-            <path d="M100,200 Q400,160 700,180 Q1000,200 1100,170" stroke="#00f5ff" stroke-width="2" fill="none" opacity="0.8" />
-          </svg>
-        </div>
-        
-        <!-- Timeline Milestones -->
-        <div class="roadmap-timeline">
-          <div class="timeline-milestone" style="left: 8%">
-            <div class="milestone-marker">
-              <div class="marker-dot"></div>
-              <div class="marker-line"></div>
-            </div>
-            <div class="milestone-content">
-              <h3 class="milestone-title">Launch Phase</h3>
-              <ul class="milestone-tasks">
-                <li>Token issuance & exchange listings.</li>
-                <li>Whitepaper publication.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="timeline-milestone" style="left: 35%">
-            <div class="milestone-marker">
-              <div class="marker-dot"></div>
-              <div class="marker-line"></div>
-            </div>
-            <div class="milestone-content">
-              <h3 class="milestone-title">Expansion Phase</h3>
-              <ul class="milestone-tasks">
-                <li>Governance portal launch.</li>
-                <li>Member growth campaigns.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="timeline-milestone" style="left: 62%">
-            <div class="milestone-marker">
-              <div class="marker-dot"></div>
-              <div class="marker-line"></div>
-            </div>
-            <div class="milestone-content">
-              <h3 class="milestone-title">Utility Rollout</h3>
-              <ul class="milestone-tasks">
-                <li>Token payment integrations.</li>
-                <li>Service discounts enabled.</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="timeline-milestone" style="left: 88%">
-            <div class="milestone-marker">
-              <div class="marker-dot"></div>
-              <div class="marker-line"></div>
-            </div>
-            <div class="milestone-content">
-              <h3 class="milestone-title">Scaling</h3>
-              <ul class="milestone-tasks">
-                <li>New exchange listings.</li>
-                <li>Ecosystem partnerships.</li>
-              </ul>
-            </div>
-          </div>
+
+        <div class="roadmap-visual">
+          <img src="@/assets/roadMap.png" alt="Roadmap" class="roadmap-image" />
         </div>
       </div>
     </section>
@@ -309,25 +263,52 @@
     <section class="section exchange-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">EXCHANGE LISTINGS</h2>
-          <p class="section-subtitle">Our governance token is listed on multiple overseas exchanges</p>
+          <h2 class="section-title">{{ $t("sections.exchanges.title") }}</h2>
+          <p class="section-subtitle">
+            {{ $t("sections.exchanges.subtitle") }}
+          </p>
         </div>
-        
+
         <div class="exchange-grid">
           <div class="exchange-card active">
-            <div class="exchange-name">CoinGecko</div>
+            <img
+              src="@/assets/list_1.png"
+              alt="CoinGecko"
+              class="exchange-logo"
+            />
+            <div class="exchange-name">
+              {{ $t("sections.exchanges.coingecko") }}
+            </div>
           </div>
           <div class="exchange-card">
-            <div class="exchange-name">DEX</div>
+            <img src="@/assets/list_2.png" alt="DEX" class="exchange-logo" />
+            <div class="exchange-name">{{ $t("sections.exchanges.dex") }}</div>
           </div>
           <div class="exchange-card">
-            <div class="exchange-name">UNISWAP</div>
+            <img
+              src="@/assets/list_3.png"
+              alt="Uniswap"
+              class="exchange-logo"
+            />
+            <div class="exchange-name">
+              {{ $t("sections.exchanges.uniswap") }}
+            </div>
           </div>
           <div class="exchange-card">
-            <div class="exchange-name">BITGET TOKEN</div>
+            <img src="@/assets/list_4.png" alt="Bitget" class="exchange-logo" />
+            <div class="exchange-name">
+              {{ $t("sections.exchanges.bitget") }}
+            </div>
           </div>
           <div class="exchange-card">
-            <div class="exchange-name">PANCAKESWAP</div>
+            <img
+              src="@/assets/list_5.png"
+              alt="PancakeSwap"
+              class="exchange-logo"
+            />
+            <div class="exchange-name">
+              {{ $t("sections.exchanges.pancakeswap") }}
+            </div>
           </div>
         </div>
       </div>
@@ -337,35 +318,57 @@
     <section class="section governance-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">GOVERNANCE</h2>
-          <p class="section-subtitle">All major decisions are made by token holders through an inclusive voting system.</p>
+          <h2 class="section-title">{{ $t("sections.governance.title") }}</h2>
+          <p class="section-subtitle">
+            {{ $t("sections.governance.subtitle") }}
+          </p>
         </div>
-        
+
         <div class="governance-features">
           <div class="governance-card">
             <div class="governance-icon">
-              <div class="icon-content">📊</div>
+              <img
+                src="@/assets/gover_1.png"
+                alt="Submit proposals"
+                class="governance-image"
+              />
             </div>
-            <h3 class="governance-title">Submit proposals</h3>
+            <h3 class="governance-title">
+              {{ $t("sections.governance.submitProposals") }}
+            </h3>
           </div>
-          
+
           <div class="governance-card">
             <div class="governance-icon">
-              <div class="icon-content">🗳️</div>
+              <img
+                src="@/assets/gover_2.png"
+                alt="Vote transparently"
+                class="governance-image"
+              />
             </div>
-            <h3 class="governance-title">Vote transparently</h3>
+            <h3 class="governance-title">
+              {{ $t("sections.governance.voteTransparently") }}
+            </h3>
           </div>
-          
+
           <div class="governance-card">
             <div class="governance-icon">
-              <div class="icon-content">🏆</div>
+              <img
+                src="@/assets/gover_3.png"
+                alt="Shape the future"
+                class="governance-image"
+              />
             </div>
-            <h3 class="governance-title">Shape the future of the ecosystem</h3>
+            <h3 class="governance-title">
+              {{ $t("sections.governance.shapeFuture") }}
+            </h3>
           </div>
         </div>
-        
+
         <div class="governance-action">
-          <button class="btn btn-primary">Start Governance</button>
+          <button class="btn btn-primary">
+            {{ $t("sections.governance.startGovernance") }}
+          </button>
         </div>
       </div>
     </section>
@@ -374,15 +377,22 @@
     <section class="section faq-section">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">FAQ</h2>
+          <h2 class="section-title">{{ $t("sections.faq.title") }}</h2>
         </div>
-        
+
         <div class="faq-list">
           <div class="faq-item" v-for="(faq, index) in faqs" :key="index">
             <button class="faq-question" @click="toggleFaq(index)">
               <span>{{ faq.question }}</span>
-              <svg class="faq-icon" :class="{ active: openFaqs.includes(index) }" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6,9 12,15 18,9"/>
+              <svg
+                class="faq-icon"
+                :class="{ active: openFaqs.includes(index) }"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="6,9 12,15 18,9" />
               </svg>
             </button>
             <div class="faq-answer" v-show="openFaqs.includes(index)">
@@ -396,169 +406,43 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js/auto';
+import { ref } from "vue";
+import { useI18n } from "vue-i18n";
 
-const openFaqs = ref<number[]>([])
-const chartCanvas = ref<HTMLCanvasElement | null>(null)
-let chartInstance: any = null
+const { t } = useI18n();
+const openFaqs = ref<number[]>([]);
 
 const faqs = [
   {
-    question: "What is the main purpose of this governance token?",
-    answer: "To enable community participation in decision-making and provide utility in payments and discounts."
+    question: t("sections.faq.questions.0.question"),
+    answer: t("sections.faq.questions.0.answer"),
   },
   {
-    question: "Is the token value guaranteed to increase with BTC?",
-    answer: "No. The correlation with BTC is a treasury strategy, but price movements are uncertain."
+    question: t("sections.faq.questions.1.question"),
+    answer: t("sections.faq.questions.1.answer"),
   },
   {
-    question: "How are monthly BTC purchases calculated?",
-    answer: "By multiplying the number of members by ¥5,000 each month."
+    question: t("sections.faq.questions.2.question"),
+    answer: t("sections.faq.questions.2.answer"),
   },
   {
-    question: "Is this token a security?",
-    answer: "No. It is structured to avoid being classified as a security, with utility functions in governance and services."
+    question: t("sections.faq.questions.3.question"),
+    answer: t("sections.faq.questions.3.answer"),
   },
   {
-    question: "Where can I trade the token?",
-    answer: "On selected overseas exchanges (to be announced)."
-  }
-]
+    question: t("sections.faq.questions.4.question"),
+    answer: t("sections.faq.questions.4.answer"),
+  },
+];
 
 const toggleFaq = (index: number) => {
-  const faqIndex = openFaqs.value.indexOf(index)
+  const faqIndex = openFaqs.value.indexOf(index);
   if (faqIndex > -1) {
-    openFaqs.value.splice(faqIndex, 1)
+    openFaqs.value.splice(faqIndex, 1);
   } else {
-    openFaqs.value.push(index)
+    openFaqs.value.push(index);
   }
-}
-
-const initChart = async () => {
-  try {
-    console.log('Starting chart initialization...')
-    
-    if (!chartCanvas.value) {
-      console.error('Canvas element not found')
-      return
-    }
-    
-    console.log('Canvas element found, importing Chart.js...')
-    
-    // Destroy existing chart if any
-    if (chartInstance) {
-      chartInstance.destroy()
-      chartInstance = null
-    }
-    
-    // Dynamic import Chart.js
-    console.log('Chart.js imported successfully')
-    
-    // Register components
-    Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
-    
-    const ctx = chartCanvas.value.getContext('2d')
-    if (!ctx) {
-      console.error('Canvas context not available')
-      return
-    }
-    
-    console.log('Creating chart instance...')
-    
-    chartInstance = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['1月', '2月', '3月', '4月'],
-        datasets: [
-          {
-            label: 'A类',
-            data: [30, 35, 85, 60],
-            backgroundColor: '#f39c12',
-            borderColor: '#f1c40f',
-            borderWidth: 1
-          },
-          {
-            label: '类别',
-            data: [65, 70, 80, 95],
-            backgroundColor: '#00f5ff',
-            borderColor: '#4cc9f0',
-            borderWidth: 1
-          },
-          {
-            label: 'C类',
-            data: [45, 25, 75, 35],
-            backgroundColor: '#27ae60',
-            borderColor: '#2ecc71',
-            borderWidth: 1
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            position: 'bottom',
-            labels: {
-              color: '#b8c0d4',
-              font: {
-                size: 12
-              },
-              padding: 20,
-              usePointStyle: true
-            }
-          },
-          tooltip: {
-            backgroundColor: 'rgba(26, 31, 53, 0.9)',
-            titleColor: '#00f5ff',
-            bodyColor: '#b8c0d4'
-          }
-        },
-        scales: {
-          x: {
-            grid: {
-              display: false
-            },
-            ticks: {
-              color: '#b8c0d4'
-            }
-          },
-          y: {
-            beginAtZero: true,
-            max: 100,
-            grid: {
-              color: 'rgba(184, 192, 212, 0.1)'
-            },
-            ticks: {
-              color: '#b8c0d4',
-              stepSize: 20
-            }
-          }
-        }
-      }
-    })
-    
-    console.log('Chart created successfully:', chartInstance)
-    
-  } catch (error) {
-    console.error('Error initializing chart:', error)
-  }
-}
-
-onMounted(() => {
-  // Initialize chart after DOM is mounted
-  setTimeout(() => {
-    console.log('DOM mounted, initializing chart...')
-    initChart()
-  }, 300)
-})
-
-onUnmounted(() => {
-  if (chartInstance) {
-    chartInstance.destroy()
-  }
-})
+};
 </script>
 
 <style scoped>
@@ -617,7 +501,11 @@ onUnmounted(() => {
 
 /* Governance Token Section */
 .governance-token-section {
-  background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(76, 201, 240, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 245, 255, 0.05),
+    rgba(76, 201, 240, 0.05)
+  );
 }
 
 .token-features {
@@ -627,7 +515,11 @@ onUnmounted(() => {
 }
 
 .feature-card {
-  background: linear-gradient(145deg, var(--color-surface), var(--color-surface-light));
+  background: linear-gradient(
+    145deg,
+    var(--color-surface),
+    var(--color-surface-light)
+  );
   border: 1px solid var(--color-border);
   border-radius: 1rem;
   padding: 2rem;
@@ -638,13 +530,17 @@ onUnmounted(() => {
 }
 
 .feature-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
 }
 
 .feature-card:hover {
@@ -656,7 +552,11 @@ onUnmounted(() => {
 .feature-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -721,7 +621,11 @@ onUnmounted(() => {
 .floating-coin {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
 }
 
@@ -750,23 +654,42 @@ onUnmounted(() => {
 }
 
 @keyframes float1 {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
 }
 
 @keyframes float2 {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(-180deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-180deg);
+  }
 }
 
 @keyframes float3 {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(180deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+  }
 }
 
 /* Token Economy Section */
 .token-economy-section {
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(0, 245, 255, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 136, 0.05),
+    rgba(0, 245, 255, 0.05)
+  );
   padding: 4rem 0;
 }
 
@@ -789,7 +712,11 @@ onUnmounted(() => {
 .platform-base {
   width: 100%;
   height: 100%;
-  background: linear-gradient(145deg, rgba(0, 245, 255, 0.3), rgba(76, 201, 240, 0.2));
+  background: linear-gradient(
+    145deg,
+    rgba(0, 245, 255, 0.3),
+    rgba(76, 201, 240, 0.2)
+  );
   border-radius: 50%;
   transform: perspective(100px) rotateX(60deg);
   box-shadow: 0 0 30px rgba(0, 245, 255, 0.4);
@@ -848,18 +775,33 @@ onUnmounted(() => {
 }
 
 @keyframes float1 {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
 }
 
 @keyframes float2 {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(-180deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-180deg);
+  }
 }
 
 @keyframes float3 {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-25px) rotate(360deg); }
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(360deg);
+  }
 }
 
 .growth-arrow {
@@ -876,7 +818,11 @@ onUnmounted(() => {
   bottom: 0;
   width: 3px;
   height: 80px;
-  background: linear-gradient(to top, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    to top,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   transform: translateX(-50%) rotate(-15deg);
   border-radius: 2px;
 }
@@ -910,7 +856,11 @@ onUnmounted(() => {
 }
 
 .bar {
-  background: linear-gradient(to top, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    to top,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   width: 8px;
   border-radius: 2px 2px 0 0;
   animation: barGrow 2s ease-out;
@@ -918,8 +868,12 @@ onUnmounted(() => {
 }
 
 @keyframes barGrow {
-  from { height: 0%; }
-  to { height: var(--height, 100%); }
+  from {
+    height: 0%;
+  }
+  to {
+    height: var(--height, 100%);
+  }
 }
 
 .economy-timeline {
@@ -934,7 +888,11 @@ onUnmounted(() => {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    var(--color-secondary)
+  );
 }
 
 .economy-item {
@@ -953,7 +911,11 @@ onUnmounted(() => {
   transform: translateY(-50%);
   width: 14px;
   height: 14px;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   border-radius: 50%;
   border: 2px solid var(--color-background);
   box-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
@@ -990,7 +952,11 @@ onUnmounted(() => {
 }
 
 .growth-info-panel {
-  background: linear-gradient(145deg, rgba(26, 31, 53, 0.95), rgba(42, 47, 69, 0.9));
+  background: linear-gradient(
+    145deg,
+    rgba(26, 31, 53, 0.95),
+    rgba(42, 47, 69, 0.9)
+  );
   border: 1px solid var(--color-border);
   border-radius: 1rem;
   padding: 2rem;
@@ -1030,14 +996,22 @@ onUnmounted(() => {
 .data-table {
   width: 100%;
   border-collapse: collapse;
-  background: linear-gradient(145deg, rgba(26, 31, 53, 0.95), rgba(42, 47, 69, 0.9));
+  background: linear-gradient(
+    145deg,
+    rgba(26, 31, 53, 0.95),
+    rgba(42, 47, 69, 0.9)
+  );
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
 .data-table th {
-  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   color: var(--color-background);
   padding: 0.75rem;
   font-weight: 600;
@@ -1080,7 +1054,11 @@ onUnmounted(() => {
 
 /* Growth Model Section */
 .growth-model-section {
-  background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(76, 201, 240, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 245, 255, 0.05),
+    rgba(76, 201, 240, 0.05)
+  );
 }
 
 .growth-card {
@@ -1099,7 +1077,11 @@ onUnmounted(() => {
 }
 
 .growth-text {
-  background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(76, 201, 240, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 245, 255, 0.1),
+    rgba(76, 201, 240, 0.05)
+  );
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -1131,7 +1113,11 @@ onUnmounted(() => {
 }
 
 .growth-chart {
-  background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(52, 152, 219, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(243, 156, 18, 0.1),
+    rgba(52, 152, 219, 0.05)
+  );
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -1153,7 +1139,7 @@ onUnmounted(() => {
 /* Roadmap Section */
 .roadmap-section {
   background: linear-gradient(135deg, #0a1428 0%, #1a1f35 50%, #0f1729 100%);
-  background-image: url('path/to/roadmap-bg.jpg'); /* Add your background image path here */
+  background-image: url("path/to/roadmap-bg.jpg"); /* Add your background image path here */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1164,13 +1150,18 @@ onUnmounted(() => {
 }
 
 .roadmap-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(10, 20, 40, 0.7) 0%, rgba(26, 31, 53, 0.6) 50%, rgba(15, 23, 41, 0.8) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(10, 20, 40, 0.7) 0%,
+    rgba(26, 31, 53, 0.6) 50%,
+    rgba(15, 23, 41, 0.8) 100%
+  );
   z-index: 1;
 }
 
@@ -1210,7 +1201,8 @@ onUnmounted(() => {
 }
 
 @keyframes waveFlow {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -1246,7 +1238,11 @@ onUnmounted(() => {
 .marker-dot {
   width: 16px;
   height: 16px;
-  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   border-radius: 50%;
   border: 3px solid var(--color-background);
   box-shadow: 0 0 20px rgba(0, 245, 255, 0.6);
@@ -1262,7 +1258,11 @@ onUnmounted(() => {
 }
 
 .milestone-content {
-  background: linear-gradient(145deg, rgba(26, 31, 53, 0.95), rgba(42, 47, 69, 0.9));
+  background: linear-gradient(
+    145deg,
+    rgba(26, 31, 53, 0.95),
+    rgba(42, 47, 69, 0.9)
+  );
   /* border: 1px solid var(--color-border); */
   border-radius: 1rem;
   padding: 1.5rem;
@@ -1273,7 +1273,6 @@ onUnmounted(() => {
   position: relative;
   margin-top: 40px; /* Align with marker dot */
 }
-
 
 .milestone-title {
   color: var(--color-primary);
@@ -1299,7 +1298,7 @@ onUnmounted(() => {
 }
 
 .milestone-tasks li::before {
-  content: '•';
+  content: "•";
   position: absolute;
   left: 0;
   color: var(--color-primary);
@@ -1320,7 +1319,11 @@ onUnmounted(() => {
 }
 
 .exchange-card {
-  background: linear-gradient(145deg, var(--color-surface-light), var(--color-surface));
+  background: linear-gradient(
+    145deg,
+    var(--color-surface-light),
+    var(--color-surface)
+  );
   border: 2px solid var(--color-border);
   border-radius: 1rem;
   padding: 2rem 1rem;
@@ -1336,7 +1339,11 @@ onUnmounted(() => {
 }
 
 .exchange-card.active {
-  background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   border-color: var(--color-primary);
   color: var(--color-background);
 }
@@ -1348,7 +1355,11 @@ onUnmounted(() => {
 
 /* Governance Section */
 .governance-section {
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(76, 201, 240, 0.05));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 136, 0.05),
+    rgba(76, 201, 240, 0.05)
+  );
 }
 
 .governance-features {
@@ -1359,7 +1370,11 @@ onUnmounted(() => {
 }
 
 .governance-card {
-  background: linear-gradient(145deg, var(--color-surface), var(--color-surface-light));
+  background: linear-gradient(
+    145deg,
+    var(--color-surface),
+    var(--color-surface-light)
+  );
   border: 1px solid var(--color-border);
   border-radius: 1rem;
   padding: 2rem;
@@ -1397,7 +1412,21 @@ onUnmounted(() => {
 
 /* FAQ Section */
 .faq-section {
-  background: var(--color-surface);
+  background-image: url("@/assets/FAQ_pc.png");
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.faq-section .container {
+  position: relative;
+  z-index: 2;
+  max-width: var(--breakpoint-xl);
+  margin: 0 auto;
+  padding: 4rem 1rem;
 }
 
 .faq-list {
@@ -1410,7 +1439,11 @@ onUnmounted(() => {
   border-radius: 0.5rem;
   margin-bottom: 1rem;
   overflow: hidden;
-  background: linear-gradient(145deg, var(--color-surface-light), var(--color-surface));
+  background: linear-gradient(
+    145deg,
+    var(--color-surface-light),
+    var(--color-surface)
+  );
 }
 
 .faq-question {
@@ -1458,49 +1491,49 @@ onUnmounted(() => {
     gap: 2rem;
     text-align: center;
   }
-  
+
   .token-features {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .governance-features {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  
+
   /* Roadmap mobile layout for tablets */
   .roadmap-timeline::before {
     left: 30px;
   }
-  
+
   .timeline-item {
     flex-direction: row !important;
     align-items: flex-start;
     padding-left: 70px;
   }
-  
+
   .timeline-item:nth-child(odd),
   .timeline-item:nth-child(even) {
     flex-direction: row !important;
   }
-  
+
   .timeline-marker {
     left: 30px;
     transform: translateX(-50%);
   }
-  
+
   .timeline-content {
     width: 100%;
     margin: 0 !important;
     text-align: left !important;
   }
-  
+
   .timeline-content::before {
     left: -20px;
     border-right-color: var(--color-border);
     border-left-color: transparent;
   }
-  
+
   .timeline-item:nth-child(even) .timeline-content::before {
     left: -20px;
     border-right-color: var(--color-border);
@@ -1512,123 +1545,125 @@ onUnmounted(() => {
   .section {
     padding: 3rem 0;
   }
-  
+
   .section-header {
     margin-bottom: 2.5rem;
   }
-  
+  .faq-section {
+    background-image: url("@/assets/FAQ.png");
+  }
   .section-title {
     font-size: clamp(1.75rem, 6vw, 2.5rem);
   }
-  
+
   .section-subtitle {
     font-size: 1rem;
     padding: 0 1rem;
   }
-  
+
   .container {
     padding: 0 1rem;
   }
-  
+
   .token-features {
     gap: 1.5rem;
   }
-  
+
   .feature-card {
     padding: 1.5rem;
   }
-  
+
   .feature-title {
     font-size: 1.125rem;
   }
-  
+
   .governance-features {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .governance-card {
     padding: 1.5rem;
   }
-  
+
   .exchange-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
+
   .exchange-card {
     padding: 1.5rem 1rem;
   }
-  
+
   .exchange-name {
     font-size: 1rem;
   }
-  
+
   .growth-stats,
   .growth-chart,
   .growth-info-panel {
     padding: 1.5rem;
   }
-  
+
   .chart-bars {
     height: 150px;
     margin: 0 20px 15px 30px;
   }
-  
+
   .chart-y-axis {
     bottom: 30px;
   }
-  
+
   .chart-labels {
     margin: 0 20px;
   }
-  
+
   .treasury-illustration,
   .token-3d-container {
     width: 300px;
     height: 250px;
   }
-  
+
   .floating-coin,
   .flow-node {
     transform: scale(0.8);
   }
-  
+
   .token-coin {
     width: 40px;
     height: 40px;
     font-size: 1rem;
   }
-  
+
   .growth-arrow {
     width: 60px;
     height: 80px;
   }
-  
+
   .data-visualization {
     width: 50px;
     height: 60px;
   }
-  
+
   .faq-question {
     padding: 1.25rem;
     font-size: 1rem;
   }
-  
+
   .faq-answer {
     padding: 0 1.25rem 1.25rem;
   }
-  
+
   /* Roadmap mobile optimization */
   .roadmap-waves {
     height: 200px;
   }
-  
+
   .roadmap-timeline {
     height: 350px;
     margin-top: -100px;
   }
-  
+
   .timeline-milestone {
     position: relative;
     left: auto !important;
@@ -1638,15 +1673,15 @@ onUnmounted(() => {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .milestone-marker {
     margin-bottom: 1rem;
   }
-  
+
   .marker-line {
     height: 0;
   }
-  
+
   .milestone-content {
     min-width: auto;
     max-width: 100%;
@@ -1658,227 +1693,230 @@ onUnmounted(() => {
   .section {
     padding: 2rem 0;
   }
-  
+
   .section-header {
     margin-bottom: 2rem;
   }
-  
+
+  .faq-section {
+    background-image: url("@/assets/FAQ.png");
+  }
   .section-title {
     font-size: clamp(1.5rem, 5vw, 2rem);
     margin-bottom: 0.75rem;
   }
-  
+
   .section-subtitle {
     font-size: 0.9rem;
     padding: 0 0.5rem;
   }
-  
+
   .container {
     padding: 0 0.75rem;
   }
-  
+
   .feature-card,
   .governance-card {
     padding: 1.25rem;
   }
-  
+
   .feature-title,
   .governance-title {
     font-size: 1rem;
   }
-  
+
   .feature-description {
     font-size: 0.875rem;
   }
-  
+
   .feature-icon,
   .governance-icon {
     width: 50px;
     height: 50px;
     font-size: 1.5rem;
   }
-  
+
   .feature-icon svg {
     width: 24px;
     height: 24px;
   }
-  
+
   .exchange-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .exchange-card {
     padding: 1.25rem 1rem;
   }
-  
+
   .exchange-name {
     font-size: 0.9rem;
   }
-  
+
   .strategy-points {
     margin-top: 1.5rem;
   }
-  
+
   .strategy-point {
     gap: 0.75rem;
     margin-bottom: 0.875rem;
     font-size: 0.875rem;
   }
-  
+
   .economy-details {
     margin-top: 1.5rem;
   }
-  
+
   .economy-item {
     padding: 0.875rem;
     margin-bottom: 1rem;
   }
-  
+
   .item-label {
     font-size: 0.75rem;
   }
-  
+
   .item-description {
     font-size: 0.875rem;
   }
-  
+
   .growth-stats,
   .growth-chart,
   .growth-info-panel {
     padding: 1.25rem;
   }
-  
+
   .growth-content {
     grid-template-columns: 1fr;
   }
-  
+
   .growth-text,
   .growth-chart {
     padding: 1.5rem;
   }
-  
+
   .chart-container {
     height: 250px;
     max-width: 100%;
   }
-  
+
   .chart-container {
     height: 240px;
   }
-  
+
   .chart-bars {
     height: 120px;
     gap: 0.5rem;
     margin: 0 15px 15px 25px;
   }
-  
+
   .chart-bar {
     width: 15px;
   }
-  
+
   .bar-group {
     gap: 1px;
   }
-  
+
   .chart-labels {
     font-size: 0.7rem;
     margin: 0 15px;
   }
-  
+
   .chart-legend {
     gap: 1rem;
     margin-top: 0.75rem;
   }
-  
+
   .legend-item span {
     font-size: 0.7rem;
   }
-  
+
   .info-item {
     margin-bottom: 1.25rem;
   }
-  
+
   .info-text {
     font-size: 0.85rem;
   }
-  
+
   .data-table {
     font-size: 0.8rem;
   }
-  
+
   .data-table th,
   .data-table td {
     padding: 0.5rem 0.25rem;
   }
-  
+
   .treasury-illustration,
   .token-3d-container {
     width: 100%;
     height: 200px;
     max-width: 280px;
   }
-  
+
   .floating-coin {
     transform: scale(0.7);
   }
-  
+
   .coin-1 {
     width: 60px;
     height: 60px;
   }
-  
+
   .coin-2 {
     width: 45px;
     height: 45px;
   }
-  
+
   .coin-3 {
     width: 30px;
     height: 30px;
   }
-  
+
   .flow-node {
     width: 60px;
     height: 60px;
     transform: scale(0.7);
   }
-  
+
   .token-coin {
     width: 35px;
     height: 35px;
     font-size: 0.9rem;
   }
-  
+
   .growth-arrow {
     width: 50px;
     height: 60px;
   }
-  
+
   .arrow-line {
     height: 50px;
   }
-  
+
   .data-visualization {
     width: 40px;
     height: 50px;
   }
-  
+
   .economy-timeline {
     padding-left: 0;
   }
-  
+
   .timeline-line {
     left: 20px;
   }
-  
+
   .economy-item {
     grid-template-columns: 1fr;
     gap: 0.5rem;
     margin-bottom: 2rem;
     padding-left: 50px;
   }
-  
+
   .item-marker {
     left: 14px;
     top: 0.5rem;
@@ -1886,48 +1924,48 @@ onUnmounted(() => {
     width: 12px;
     height: 12px;
   }
-  
+
   .item-label {
     text-align: left;
     padding-right: 0;
     margin-bottom: 0.5rem;
   }
-  
+
   .item-description {
     padding-left: 0;
   }
-  
+
   .faq-question {
     padding: 1rem;
     font-size: 0.95rem;
   }
-  
+
   .faq-answer {
     padding: 0 1rem 1rem;
     font-size: 0.875rem;
   }
-  
+
   .faq-icon {
     width: 18px;
     height: 18px;
   }
-  
+
   .btn {
     padding: 0.875rem 1.5rem;
     font-size: 0.9rem;
     min-width: 200px;
   }
-  
+
   /* Roadmap mobile optimization */
   .roadmap-section {
     padding: 3rem 0 4rem;
   }
-  
+
   .roadmap-waves {
     height: 150px;
     margin: 1rem 0;
   }
-  
+
   .roadmap-timeline {
     height: auto;
     margin-top: 2rem;
@@ -1935,84 +1973,84 @@ onUnmounted(() => {
     flex-direction: column;
     gap: 1.5rem;
   }
-  
+
   .timeline-milestone {
     position: relative;
     left: auto !important;
     transform: none;
     margin-bottom: 0;
   }
-  
+
   .milestone-marker {
     flex-direction: row;
     justify-content: center;
     margin-bottom: 0.75rem;
   }
-  
+
   .marker-dot {
     width: 12px;
     height: 12px;
     border-width: 2px;
   }
-  
+
   .marker-line {
     width: 0;
     height: 0;
   }
-  
+
   .milestone-content {
     padding: 1rem;
     max-width: 100%;
   }
-  
+
   .milestone-title {
     font-size: 1rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .milestone-tasks li {
     font-size: 0.8rem;
     margin-bottom: 0.25rem;
     line-height: 1.3;
   }
-  
+
   /* Growth Model mobile optimization */
   .growth-info-panel,
   .growth-chart {
     padding: 1rem;
   }
-  
+
   .chart-container {
     height: 200px;
   }
-  
+
   .chart-bars {
     height: 100px;
     margin: 0 10px 10px 20px;
   }
-  
+
   .chart-bar {
     width: 12px;
   }
-  
+
   .info-text {
     font-size: 0.8rem;
   }
-  
+
   .chart-legend {
     gap: 0.75rem;
     flex-wrap: wrap;
   }
-  
+
   .data-table {
     font-size: 0.75rem;
   }
-  
+
   .data-table th,
   .data-table td {
     padding: 0.4rem 0.2rem;
   }
-  
+
   .growth-table {
     margin-top: 1.5rem;
     overflow-x: auto;
@@ -2023,69 +2061,72 @@ onUnmounted(() => {
   .container {
     padding: 0 0.5rem;
   }
-  
+
+  .faq-section {
+    background-image: url("@/assets/FAQ.png");
+  }
   .section-title {
     font-size: 1.375rem;
   }
-  
+
   .section-subtitle {
     font-size: 0.85rem;
   }
-  
+
   .feature-card,
   .governance-card {
     padding: 1rem;
   }
-  
+
   .feature-icon,
   .governance-icon {
     width: 45px;
     height: 45px;
     font-size: 1.25rem;
   }
-  
+
   .btn {
     padding: 0.75rem 1.25rem;
     font-size: 0.85rem;
     min-width: 180px;
   }
-  
+
   .treasury-illustration,
   .token-3d-container {
     height: 160px;
   }
-  
+
   .token-coin {
     width: 30px;
     height: 30px;
     font-size: 0.8rem;
   }
-  
+
   .growth-arrow {
     width: 40px;
     height: 50px;
   }
-  
+
   .data-visualization {
     width: 35px;
     height: 40px;
   }
-  
+
   .economy-timeline {
     padding-left: 0;
   }
-  
+
   .timeline-line {
     left: 15px;
   }
-  
+
   .economy-item {
     grid-template-columns: 1fr;
     gap: 0.25rem;
     margin-bottom: 1.5rem;
     padding-left: 40px;
   }
-  
+
   .item-marker {
     left: 9px;
     top: 0.25rem;
@@ -2093,37 +2134,131 @@ onUnmounted(() => {
     width: 10px;
     height: 10px;
   }
-  
+
   .item-label {
     text-align: left;
     font-size: 0.8rem;
     margin-bottom: 0.25rem;
   }
-  
+
   .item-description {
     font-size: 0.85rem;
     padding-left: 0;
   }
-  
+
   /* Roadmap extra small screens */
   .roadmap-section {
     padding: 2rem 0 3rem;
   }
-  
+
   .roadmap-waves {
     height: 120px;
   }
-  
+
   .milestone-content {
     padding: 0.875rem;
   }
-  
+
   .milestone-title {
     font-size: 0.95rem;
   }
-  
+
   .milestone-tasks li {
     font-size: 0.75rem;
   }
+}
+
+/* Image Styles */
+.token-icon,
+.treasury-image,
+.economy-image,
+.roadmap-image,
+.exchange-logo,
+.governance-image,
+.faq-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.3));
+}
+
+.token-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.treasury-image {
+  max-width: 400px;
+  height: auto;
+}
+
+.economy-image {
+  max-width: 400px;
+  height: auto;
+}
+
+.roadmap-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.exchange-logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.governance-image {
+  width: 80px;
+  height: 80px;
+}
+
+.roadmap-visual {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.chart-visual {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  height: 200px;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.chart-bars .bar {
+  background: linear-gradient(to top, #00f5ff, #4cc9f0, #00ff88);
+  width: 30px;
+  border-radius: 4px 4px 0 0;
+  min-height: 20px;
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.chart-bars .bar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.chart-labels span {
+  width: 30px;
+  text-align: center;
 }
 </style>

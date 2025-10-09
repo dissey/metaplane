@@ -4,13 +4,13 @@
       <!-- Logo -->
       <div class="nav-brand">
         <router-link to="/" class="brand-link">
-          <div class="logo">
+          <!-- <div class="logo">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="16" cy="16" r="16" fill="currentColor"/>
               <path d="M12.5 11.5h7v2h-7v-2zm-1 4h9v2h-9v-2zm1 4h7v2h-7v-2z" fill="white"/>
             </svg>
             <span class="brand-text">MetaPlanet</span>
-          </div>
+          </div> -->
         </router-link>
       </div>
 
