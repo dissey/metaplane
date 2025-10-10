@@ -2,16 +2,16 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-brand">
-        <span class="brand-title">COMPLIANCE & DISCLAIMER</span>
+        <span class="brand-title">{{ $t("footer.title") }}</span>
       </div>
       <div class="footer-disclaimers">
         <ul class="disclaimer-list">
-          <li>This token is not a security or stablecoin.</li>
-          <li>Token value may fluctuate significantly; scenarios shown are hypothetical.</li>
+          <li>{{ $t("footer.list.0") }}</li>
+          <li>{{ $t("footer.list.1") }}</li>
         </ul>
         <ul class="disclaimer-list">
-          <li>Participation may not be available in certain jurisdictions.</li>
-          <li>This website does not constitute investment advice.</li>
+          <li>{{ $t("footer.list.2") }}</li>
+          <li>{{ $t("footer.list.3") }}</li>
         </ul>
       </div>
     </div>

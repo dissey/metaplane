@@ -478,7 +478,7 @@ onUnmounted(() => {
   window.removeEventListener("resize", handleResize);
 });
 
-const faqs = [
+const faqs = computed(() => [
   {
     question: t("sections.faq.questions.0.question"),
     answer: t("sections.faq.questions.0.answer"),
@@ -499,7 +499,7 @@ const faqs = [
     question: t("sections.faq.questions.4.question"),
     answer: t("sections.faq.questions.4.answer"),
   },
-];
+]);
 
 const toggleFaq = (index: number) => {
   const faqIndex = openFaqs.value.indexOf(index);
@@ -1951,7 +1951,8 @@ const toggleFaq = (index: number) => {
     padding-bottom: 24px;
   }
   .governance-title {
-    padding: 0;
+    padding: 10px 0;
+    margin-bottom: 0;
   }
 }
 
