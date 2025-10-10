@@ -417,6 +417,10 @@ onUnmounted(() => {
     height: 3.5rem;
     padding: 0 var(--spacing-sm);
   }
+  .header.header-scrolled {
+    background: transparent;
+    box-shadow: none;
+  }
 }
 
 .nav-brand {
