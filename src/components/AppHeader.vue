@@ -16,6 +16,48 @@
 
       <!-- Desktop Navigation -->
       <div v-if="!isMobile" class="nav-menu">
+        <!-- Home with submenu -->
+        <div class="nav-item-with-submenu">
+          <router-link
+            to="/"
+            class="nav-link"
+            :class="{ active: $route.path === '/' }"
+          >
+            {{ $t('nav.home') }}
+            <svg class="submenu-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6,9 12,15 18,9"/>
+            </svg>
+          </router-link>
+          
+          <div class="submenu">
+            <a @click="scrollToSection('governance-token-section')" class="submenu-link">
+              {{ $t('sections.governanceToken.title') }}
+            </a>
+            <a @click="scrollToSection('treasury-section')" class="submenu-link">
+              {{ $t('sections.treasuryStrategy.title') }}
+            </a>
+            <a @click="scrollToSection('token-economy-section')" class="submenu-link">
+              {{ $t('sections.tokenEconomy.title') }}
+            </a>
+            <a @click="scrollToSection('growth-model-section')" class="submenu-link">
+              {{ $t('sections.growthModel.title') }}
+            </a>
+            <a @click="scrollToSection('roadmap-section')" class="submenu-link">
+              {{ $t('sections.roadmap.title') }}
+            </a>
+            <a @click="scrollToSection('exchange-section')" class="submenu-link">
+              {{ $t('sections.exchanges.title') }}
+            </a>
+            <a @click="scrollToSection('governance-section')" class="submenu-link">
+              {{ $t('sections.governance.title') }}
+            </a>
+            <a @click="scrollToSection('faq-section')" class="submenu-link">
+              {{ $t('sections.faq.title') }}
+            </a>
+          </div>
+        </div>
+        
+        <!-- Other navigation items -->
         <router-link
           v-for="item in navigation"
           :key="item.key"
@@ -288,6 +330,17 @@ const toggleLanguageMenu = () => {
 const selectLanguage = (locale: string) => {
   languageStore.setLocale(locale)
   showLanguageMenu.value = false
+}
+
+// Smooth scroll to section function
+const scrollToSection = (sectionClass: string) => {
+  const element = document.querySelector(`.${sectionClass}`)
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
 }
 
 const handleClickOutside = (event: Event) => {
@@ -838,4 +891,68 @@ onUnmounted(() => {
   max-height: 200px;
   transform: translateY(0);
 }
+
+/* Submenu Styles */
+.nav-item-with-submenu {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-item-with-submenu:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.submenu-arrow {
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
+  transition: transform var(--transition-fast);
+}
+
+.nav-item-with-submenu:hover .submenu-arrow {
+  transform: rotate(180deg);
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 280px;
+  background: rgba(26, 31, 53, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--transition-normal);
+  z-index: 1000;
+  padding: 0.5rem 0;
+}
+
+.submenu-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+
+.submenu-link:hover {
+  color: var(--color-primary);
+  background: rgba(0, 245, 255, 0.1);
+  border-bottom-color: var(--color-primary);
+}
+
+.submenu-link:last-child {
+  border-bottom: none;
+}
+
 </style>

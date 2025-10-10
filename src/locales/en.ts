@@ -22,15 +22,15 @@ export default {
       subtitle: 'Our governance token provides equal and utilize similar to shareholder participation in a decentralized environment where holders have full control over key strategic decisions.',
       feature1: {
         title: 'Decentralized with our DAO Gov',
-        description: 'Community-driven governance ensuring transparent decision-making'
+        description: 'Vote on proposals within our DAO-like governance system.'
       },
       feature2: {
         title: 'Participate in Improve Transparency',
-        description: 'Active participation in governance decisions with full transparency'
+        description: 'Participate in decisions regarding management and treasury strategies.'
       },
       feature3: {
         title: 'Stake Locked for Payments, Discounts, and Voting Power',
-        description: 'Multiple utility functions within the ecosystem'
+        description: 'Use tokens for payments, discounts, and services within our ecosystem.'
       }
     },
     treasuryStrategy: {
@@ -93,7 +93,7 @@ export default {
       submitProposals: 'Submit proposals',
       voteTransparently: 'Vote transparently',
       shapeFuture: 'Shape the future of the ecosystem',
-      startGovernance: 'Start Governance'
+      startGovernance: 'Enter Governance Portal'
     },
     faq: {
       title: 'FAQ',

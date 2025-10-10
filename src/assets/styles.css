@@ -19,6 +19,7 @@
   --color-border: #2a3441;
   --color-shadow: rgba(0, 245, 255, 0.1);
   --color-glow: rgba(0, 245, 255, 0.3);
+  --color-grey:rgba(41,88,89,0.4);
   
   /* Typography */
   --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -157,20 +158,8 @@ p {
   }
 }
 
-.section {
-  padding: var(--spacing-3xl) 0;
-}
 
 @media (max-width: 767px) {
-  .section {
-    padding: var(--spacing-2xl) 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .section {
-    padding: var(--spacing-xl) 0;
-  }
 }
 
 /* Grid system */

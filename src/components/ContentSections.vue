@@ -7,9 +7,9 @@
           <h2 class="section-title">
             {{ $t("sections.governanceToken.title") }}
           </h2>
-          <p class="section-subtitle">
+          <div class="section-subtitle">
             {{ $t("sections.governanceToken.subtitle") }}
-          </p>
+          </div>
         </div>
 
         <div class="token-features">
@@ -21,12 +21,9 @@
                 class="token-icon"
               />
             </div>
-            <h3 class="feature-title">
-              {{ $t("sections.governanceToken.feature1.title") }}
-            </h3>
-            <p class="feature-description">
+            <div class="feature-description">
               {{ $t("sections.governanceToken.feature1.description") }}
-            </p>
+            </div>
           </div>
 
           <div class="feature-card">
@@ -37,12 +34,9 @@
                 class="token-icon"
               />
             </div>
-            <h3 class="feature-title">
-              {{ $t("sections.governanceToken.feature2.title") }}
-            </h3>
-            <p class="feature-description">
+            <div class="feature-description">
               {{ $t("sections.governanceToken.feature2.description") }}
-            </p>
+            </div>
           </div>
 
           <div class="feature-card">
@@ -53,12 +47,9 @@
                 class="token-icon"
               />
             </div>
-            <h3 class="feature-title">
-              {{ $t("sections.governanceToken.feature3.title") }}
-            </h3>
-            <p class="feature-description">
+            <div class="feature-description">
               {{ $t("sections.governanceToken.feature3.description") }}
-            </p>
+            </div>
           </div>
         </div>
       </div>
@@ -72,9 +63,9 @@
             <h2 class="section-title">
               {{ $t("sections.treasuryStrategy.title") }}
             </h2>
-            <p class="section-description">
+            <div class="section-description">
               {{ $t("sections.treasuryStrategy.description") }}
-            </p>
+            </div>
             <div class="strategy-points">
               <div class="strategy-point">
                 <span class="point-bullet">•</span>
@@ -175,9 +166,9 @@
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">{{ $t("sections.growthModel.title") }}</h2>
-          <p class="section-subtitle">
+          <div class="section-subtitle-sub">
             {{ $t("sections.growthModel.subtitle") }}
-          </p>
+          </div>
         </div>
 
         <div class="growth-card">
@@ -185,24 +176,24 @@
             <div class="growth-text">
               <div class="info-panel">
                 <div class="info-item">
-                  <span class="bullet">•</span>
-                  <span class="info-text">{{
-                    $t("sections.growthModel.month1")
-                  }}</span>
+                  <div class="bullet">•</div>
+                  <div class="info-text">
+                    {{ $t("sections.growthModel.month1") }}
+                  </div>
                 </div>
 
                 <div class="info-item">
-                  <span class="bullet">•</span>
-                  <span class="info-text">{{
-                    $t("sections.growthModel.month2")
-                  }}</span>
+                  <div class="bullet">•</div>
+                  <div class="info-text">
+                    {{ $t("sections.growthModel.month2") }}
+                  </div>
                 </div>
 
                 <div class="info-item">
-                  <span class="bullet">•</span>
-                  <span class="info-text">{{
-                    $t("sections.growthModel.andSoOn")
-                  }}</span>
+                  <div class="bullet">•</div>
+                  <div class="info-text">
+                    {{ $t("sections.growthModel.andSoOn") }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -248,13 +239,61 @@
 
     <!-- Roadmap Section -->
     <section class="section roadmap-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">{{ $t("sections.roadmap.title") }}</h2>
+      <!-- Desktop Roadmap (>768px) -->
+      <div class="roadmap-desktop" v-show="screenWidth > 768">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">{{ $t("sections.roadmap.title") }}</h2>
+          </div>
+          <!-- Desktop roadmap content will be overlaid on background image -->
         </div>
+      </div>
 
-        <div class="roadmap-visual">
-          <img src="@/assets/roadMap.png" alt="Roadmap" class="roadmap-image" />
+      <!-- Mobile Roadmap (≤768px) -->
+      <div class="roadmap-mobile" v-show="screenWidth <= 768">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">{{ $t("sections.roadmap.title") }}</h2>
+          </div>
+
+          <!-- Mobile roadmap image content -->
+          <div class="roadmap-content">
+            <!-- Launch Phase (Top Left) -->
+            <div class="roadmap-phase launch-phase">
+              <h3 class="phase-title">Launch Phase</h3>
+              <ul class="phase-tasks">
+                <li>Token issuance & exchange listings.</li>
+                <li>Whitepaper publication.</li>
+              </ul>
+            </div>
+
+            <!-- Utility Rollout (Top Right) -->
+            <div class="roadmap-phase utility-phase">
+              <h3 class="phase-title">Utility Rollout</h3>
+              <ul class="phase-tasks">
+                <li>Token payment integrations.</li>
+                <li>Service discounts enabled.</li>
+              </ul>
+            </div>
+
+            <!-- Expansion Phase (Bottom Left) -->
+            <div class="roadmap-phase expansion-phase">
+              <h3 class="phase-title">Expansion Phase</h3>
+              <ul class="phase-tasks">
+                <li>Governance portal launch.</li>
+                <li>Member growth campaigns.</li>
+              </ul>
+            </div>
+
+            <!-- Scaling (Bottom Right) -->
+            <div class="roadmap-phase scaling-phase">
+              <h3 class="phase-title">Scaling</h3>
+              <ul class="phase-tasks">
+                <li>New exchange listings.</li>
+                <li>Ecosystem partnerships.</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -264,51 +303,24 @@
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">{{ $t("sections.exchanges.title") }}</h2>
-          <p class="section-subtitle">
+          <div class="section-subtitle">
             {{ $t("sections.exchanges.subtitle") }}
-          </p>
+          </div>
         </div>
 
         <div class="exchange-grid">
-          <div class="exchange-card active">
+          <div
+            v-for="(exchange, index) in exchanges"
+            :key="index"
+            class="exchange-card"
+            :class="{ unAble: !exchange.isShow }"
+          >
             <img
-              src="@/assets/list_1.png"
-              alt="CoinGecko"
+              :src="exchange.logo"
+              :alt="exchange.name"
               class="exchange-logo"
             />
-            <div class="exchange-name">
-              {{ $t("sections.exchanges.coingecko") }}
-            </div>
-          </div>
-          <div class="exchange-card">
-            <img src="@/assets/list_2.png" alt="DEX" class="exchange-logo" />
-            <div class="exchange-name">{{ $t("sections.exchanges.dex") }}</div>
-          </div>
-          <div class="exchange-card">
-            <img
-              src="@/assets/list_3.png"
-              alt="Uniswap"
-              class="exchange-logo"
-            />
-            <div class="exchange-name">
-              {{ $t("sections.exchanges.uniswap") }}
-            </div>
-          </div>
-          <div class="exchange-card">
-            <img src="@/assets/list_4.png" alt="Bitget" class="exchange-logo" />
-            <div class="exchange-name">
-              {{ $t("sections.exchanges.bitget") }}
-            </div>
-          </div>
-          <div class="exchange-card">
-            <img
-              src="@/assets/list_5.png"
-              alt="PancakeSwap"
-              class="exchange-logo"
-            />
-            <div class="exchange-name">
-              {{ $t("sections.exchanges.pancakeswap") }}
-            </div>
+            <div class="exchange-name">{{ $t(exchange.nameKey) }}</div>
           </div>
         </div>
       </div>
@@ -319,9 +331,9 @@
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">{{ $t("sections.governance.title") }}</h2>
-          <p class="section-subtitle">
+          <div class="section-subtitle">
             {{ $t("sections.governance.subtitle") }}
-          </p>
+          </div>
         </div>
 
         <div class="governance-features">
@@ -396,7 +408,7 @@
               </svg>
             </button>
             <div class="faq-answer" v-show="openFaqs.includes(index)">
-              <p>{{ faq.answer }}</p>
+              <div>{{ faq.answer }}</div>
             </div>
           </div>
         </div>
@@ -406,11 +418,65 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useI18n } from "vue-i18n";
 
 const { t } = useI18n();
 const openFaqs = ref<number[]>([]);
+
+// Responsive screen width for roadmap sections
+const screenWidth = ref(window.innerWidth);
+
+// Exchange data
+const exchanges = [
+  {
+    name: "BNB",
+    nameKey: "sections.exchanges.coingecko",
+    logo: "/src/assets/list_1.png",
+    active: true,
+    isShow: false,
+  },
+  {
+    name: "DEX",
+    nameKey: "sections.exchanges.dex",
+    logo: "/src/assets/list_2.png",
+    active: false,
+    isShow: true,
+  },
+  {
+    name: "Uniswap",
+    nameKey: "sections.exchanges.uniswap",
+    logo: "/src/assets/list_3.png",
+    active: false,
+    isShow: true,
+  },
+  {
+    name: "Bitget",
+    nameKey: "sections.exchanges.bitget",
+    logo: "/src/assets/list_4.png",
+    active: false,
+    isShow: true,
+  },
+  {
+    name: "PancakeSwap",
+    nameKey: "sections.exchanges.pancakeswap",
+    logo: "/src/assets/list_5.png",
+    active: false,
+    isShow: true,
+  },
+];
+
+const handleResize = () => {
+  screenWidth.value = window.innerWidth;
+};
+
+onMounted(() => {
+  window.addEventListener("resize", handleResize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", handleResize);
+});
 
 const faqs = [
   {
@@ -448,10 +514,10 @@ const toggleFaq = (index: number) => {
 <style scoped>
 .content-sections {
   padding-top: 0;
+  background: #010e19;
 }
-
 .section {
-  padding: 4rem 0;
+  /* padding: 4rem 0; */
   position: relative;
 }
 
@@ -463,10 +529,19 @@ const toggleFaq = (index: number) => {
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
+  /* 80px 64px */
+  padding-top: 1.5rem;
   margin-bottom: 1rem;
-  color: var(--color-primary);
   text-transform: uppercase;
   letter-spacing: 0.02em;
+
+  background: linear-gradient(45deg, #1eadf0 0%, #0afb60 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-style: normal;
+  text-transform: none;
 }
 
 .section-subtitle {
@@ -475,6 +550,10 @@ const toggleFaq = (index: number) => {
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
+}
+.section-subtitle-sub {
+  font-size: 24px;
+  color: #c0c7cd;
 }
 
 .section-content {
@@ -501,46 +580,29 @@ const toggleFaq = (index: number) => {
 
 /* Governance Token Section */
 .governance-token-section {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 245, 255, 0.05),
-    rgba(76, 201, 240, 0.05)
-  );
+  background: #010e19;
+  padding-bottom: 17px;
 }
 
 .token-features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
 .feature-card {
   background: linear-gradient(
-    145deg,
-    var(--color-surface),
-    var(--color-surface-light)
+    315deg,
+    rgba(105, 255, 238, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 13%,
+    rgba(255, 255, 255, 0.05) 86%,
+    rgba(105, 255, 238, 0.2) 100%
   );
-  border: 1px solid var(--color-border);
-  border-radius: 1rem;
+  border-radius: 12px 12px 12px 12px;
   padding: 2rem;
-  text-align: center;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-}
-
-.feature-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
 }
 
 .feature-card:hover {
@@ -552,16 +614,7 @@ const toggleFaq = (index: number) => {
 .feature-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(
-    45deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 1.5rem;
+  margin-bottom: 1.5rem;
   color: var(--color-background);
 }
 
@@ -584,7 +637,7 @@ const toggleFaq = (index: number) => {
 
 /* Treasury Strategy Section */
 .treasury-section {
-  background: var(--color-surface);
+  background: var(--color-grey);
 }
 
 .strategy-points {
@@ -885,7 +938,7 @@ const toggleFaq = (index: number) => {
 .timeline-line {
   position: absolute;
   left: 200px; /* Position after the labels */
-  top: 0;
+  top: 18px;
   bottom: 0;
   width: 2px;
   background: linear-gradient(
@@ -893,6 +946,7 @@ const toggleFaq = (index: number) => {
     var(--color-primary),
     var(--color-secondary)
   );
+  height: calc(100% - 97px);
 }
 
 .economy-item {
@@ -941,7 +995,7 @@ const toggleFaq = (index: number) => {
 
 /* Growth Model Section */
 .growth-model-section {
-  background: var(--color-surface);
+  background: var(--color-grey);
   padding: 4rem 0;
 }
 
@@ -960,7 +1014,7 @@ const toggleFaq = (index: number) => {
   border: 1px solid var(--color-border);
   border-radius: 1rem;
   padding: 2rem;
-  backdrop-filter: blur(15px);
+  /* backdrop-filter: blur(15px); */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
@@ -1052,27 +1106,11 @@ const toggleFaq = (index: number) => {
   color: var(--color-accent);
 }
 
-/* Growth Model Section */
-.growth-model-section {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 245, 255, 0.05),
-    rgba(76, 201, 240, 0.05)
-  );
-}
-
 .growth-card {
-  /* background: linear-gradient(145deg, rgba(26, 31, 53, 0.95), rgba(42, 47, 69, 0.9)); */
-  /* border: 1px solid var(--color-border);
-  border-radius: 1rem;
-  overflow: hidden;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); */
 }
 
 .growth-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   min-height: 400px;
 }
 
@@ -1138,9 +1176,17 @@ const toggleFaq = (index: number) => {
 
 /* Roadmap Section */
 .roadmap-section {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+/* Desktop Roadmap Styles */
+.roadmap-desktop {
   background: linear-gradient(135deg, #0a1428 0%, #1a1f35 50%, #0f1729 100%);
-  background-image: url("path/to/roadmap-bg.jpg"); /* Add your background image path here */
-  background-size: cover;
+  background-image: url("@/assets/roadMap_pc.png");
+  background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
@@ -1149,7 +1195,7 @@ const toggleFaq = (index: number) => {
   overflow: hidden;
 }
 
-.roadmap-section::before {
+.roadmap-desktop::before {
   content: "";
   position: absolute;
   top: 0;
@@ -1165,9 +1211,182 @@ const toggleFaq = (index: number) => {
   z-index: 1;
 }
 
-.roadmap-section .container {
+.roadmap-desktop .container {
   position: relative;
   z-index: 2;
+  max-width: var(--breakpoint-xl);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Mobile Roadmap Styles */
+.roadmap-mobile {
+  /* height: 315px; */
+  background: linear-gradient(135deg, #0a1428 0%, #1a1f35 50%, #0f1729 100%);
+  background-image: url("@/assets/roadMap.png");
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  position: relative;
+  overflow: hidden;
+}
+.roadmap-mobile .container {
+  padding: 0;
+}
+
+.roadmap-mobile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 20, 40, 0.85) 0%,
+    rgba(26, 31, 53, 0.8) 50%,
+    rgba(15, 23, 41, 0.9) 100%
+  );
+  z-index: 1;
+}
+
+.roadmap-mobile .container {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.roadmap-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  /* gap: 2rem; */
+  margin-top: 1rem;
+  position: relative;
+  min-height: 400px;
+  align-items: start;
+}
+
+.roadmap-mobile .roadmap-image {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  z-index: 1;
+  justify-self: center;
+}
+
+/* Roadmap Phase Styling */
+.roadmap-phase {
+  position: relative;
+  min-width: 180px;
+  max-width: 200px;
+  /* backdrop-filter: blur(15px); */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.phase-marker {
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  border-radius: 50%;
+  border: 2px solid var(--color-background);
+  box-shadow: 0 0 15px rgba(0, 245, 255, 0.6);
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.phase-title {
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+.phase-tasks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.phase-tasks li {
+  color: var(--color-text-secondary);
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.4;
+}
+
+.phase-tasks li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* Phase Grid Positioning */
+.launch-phase {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.utility-phase {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.expansion-phase {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.scaling-phase {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+/* Phase Connectors - Vertical lines extending from phase-marker */
+.phase-connector {
+  position: absolute;
+  background: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  width: 2px;
+  height: 80px;
+}
+
+.launch-connector {
+  top: 12px;
+  left: 6px;
+}
+
+.utility-connector {
+  top: 12px;
+  left: 6px;
+}
+
+.expansion-connector {
+  top: -80px;
+  left: 6px;
+}
+
+.scaling-connector {
+  top: -80px;
+  left: 6px;
 }
 
 .roadmap-waves {
@@ -1268,7 +1487,7 @@ const toggleFaq = (index: number) => {
   padding: 1.5rem;
   min-width: 200px;
   max-width: 250px;
-  backdrop-filter: blur(15px);
+  /* backdrop-filter: blur(15px); */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   position: relative;
   margin-top: 40px; /* Align with marker dot */
@@ -1312,9 +1531,7 @@ const toggleFaq = (index: number) => {
 
 .exchange-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  max-width: 800px;
+  grid-template-columns: repeat(5, 1fr);
   margin: 0 auto;
 }
 
@@ -1325,11 +1542,10 @@ const toggleFaq = (index: number) => {
     var(--color-surface)
   );
   border: 2px solid var(--color-border);
-  border-radius: 1rem;
-  padding: 2rem 1rem;
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
+  padding: clamp(1rem, 3vw, 2rem) clamp(0.5rem, 2vw, 1rem);
 }
 
 .exchange-card:hover {
@@ -1338,6 +1554,13 @@ const toggleFaq = (index: number) => {
   box-shadow: 0 10px 30px rgba(0, 245, 255, 0.2);
 }
 
+.unAble:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 173, 240, 0.5) 0%,
+    rgba(10, 251, 96, 0.5) 100%
+  );
+}
 .exchange-card.active {
   background: linear-gradient(
     45deg,
@@ -1350,34 +1573,43 @@ const toggleFaq = (index: number) => {
 
 .exchange-name {
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: clamp(0.7rem, 2vw, 1.1rem);
 }
 
 /* Governance Section */
 .governance-section {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 255, 136, 0.05),
-    rgba(76, 201, 240, 0.05)
-  );
 }
 
 .governance-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 2rem;
+  justify-content: center;
   margin-bottom: 3rem;
+  overflow-x: auto;
+}
+
+@media (max-width: 1024px) {
+  .governance-features {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .governance-features {
+    gap: 1rem;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .governance-features {
+    gap: 0.5rem;
+  }
 }
 
 .governance-card {
-  background: linear-gradient(
-    145deg,
-    var(--color-surface),
-    var(--color-surface-light)
-  );
-  border: 1px solid var(--color-border);
-  border-radius: 1rem;
-  padding: 2rem;
   text-align: center;
   transition: all 0.3s ease;
 }
@@ -1409,6 +1641,12 @@ const toggleFaq = (index: number) => {
 .governance-action {
   text-align: center;
 }
+.governance-action .btn {
+  /* width: 155px;
+  height: 40px; */
+  background: linear-gradient(135deg, #1eadf0 0%, #0afb60 100%), #333333;
+  border-radius: 8px 8px 8px 8px;
+}
 
 /* FAQ Section */
 .faq-section {
@@ -1426,7 +1664,7 @@ const toggleFaq = (index: number) => {
   z-index: 2;
   max-width: var(--breakpoint-xl);
   margin: 0 auto;
-  padding: 4rem 1rem;
+  padding: 4rem 1rem 0;
 }
 
 .faq-list {
@@ -1435,15 +1673,11 @@ const toggleFaq = (index: number) => {
 }
 
 .faq-item {
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
+  border-radius: 8px 8px 8px 8px;
+  border: 1px solid rgba(157, 255, 251, 0.2);
   margin-bottom: 1rem;
   overflow: hidden;
-  background: linear-gradient(
-    145deg,
-    var(--color-surface-light),
-    var(--color-surface)
-  );
+  background: rgba(202, 249, 236, 0.1);
 }
 
 .faq-question {
@@ -1484,17 +1718,26 @@ const toggleFaq = (index: number) => {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .section-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+  }
   .section-content,
   .section-content.reverse,
   .growth-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
     text-align: center;
+  }
+  .section-text {
+    max-width: 400px;
+  }
+  .section-visual {
+    width: fit-content;
   }
 
   .token-features {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 
   .governance-features {
@@ -1542,10 +1785,9 @@ const toggleFaq = (index: number) => {
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 3rem 0;
+  .faq-section .container {
+    padding-top: 20px;
   }
-
   .section-header {
     margin-bottom: 2.5rem;
   }
@@ -1556,25 +1798,34 @@ const toggleFaq = (index: number) => {
     font-size: clamp(1.75rem, 6vw, 2.5rem);
   }
 
-  .section-subtitle {
-    font-size: 1rem;
+  .section-subtitle,
+  .section-description {
+    font-size: 14px;
     padding: 0 1rem;
+    text-align: left;
   }
-
+  .section-subtitle-sub {
+    font-size: 12px;
+  }
   .container {
     padding: 0 1rem;
   }
 
   .token-features {
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
 
   .feature-card {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .feature-title {
-    font-size: 1.125rem;
+    font-size: 1rem;
+  }
+
+  .feature-description {
+    font-size: 0.75rem;
   }
 
   .governance-features {
@@ -1583,20 +1834,26 @@ const toggleFaq = (index: number) => {
   }
 
   .governance-card {
-    padding: 1.5rem;
+    /* padding: 1.5rem; */
+    flex: 1;
   }
 
   .exchange-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
   }
 
   .exchange-card {
-    padding: 1.5rem 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .exchange-logo {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 0.5rem;
   }
 
   .exchange-name {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .growth-stats,
@@ -1687,13 +1944,18 @@ const toggleFaq = (index: number) => {
     max-width: 100%;
     width: 100%;
   }
+  .item-description {
+    text-align: left;
+  }
+  .governance-action {
+    padding-bottom: 24px;
+  }
+  .governance-title {
+    padding: 0;
+  }
 }
 
 @media (max-width: 480px) {
-  .section {
-    padding: 2rem 0;
-  }
-
   .section-header {
     margin-bottom: 2rem;
   }
@@ -1706,34 +1968,37 @@ const toggleFaq = (index: number) => {
     margin-bottom: 0.75rem;
   }
 
-  .section-subtitle {
-    font-size: 0.9rem;
+  .section-subtitle,
+  .section-description {
+    font-size: 11px;
     padding: 0 0.5rem;
+    text-align: left;
   }
 
   .container {
     padding: 0 0.75rem;
   }
 
-  .feature-card,
-  .governance-card {
-    padding: 1.25rem;
+  .token-features {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
   }
 
   .feature-title,
   .governance-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .feature-description {
-    font-size: 0.875rem;
+    font-size: 0.7rem;
   }
 
   .feature-icon,
   .governance-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .feature-icon svg {
@@ -1742,16 +2007,21 @@ const toggleFaq = (index: number) => {
   }
 
   .exchange-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr);
   }
 
   .exchange-card {
-    padding: 1.25rem 1rem;
+    padding: 0.875rem 0.25rem;
+  }
+
+  .exchange-logo {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 0.25rem;
   }
 
   .exchange-name {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 
   .strategy-points {
@@ -1762,6 +2032,7 @@ const toggleFaq = (index: number) => {
     gap: 0.75rem;
     margin-bottom: 0.875rem;
     font-size: 0.875rem;
+    text-align: left;
   }
 
   .economy-details {
@@ -1770,7 +2041,7 @@ const toggleFaq = (index: number) => {
 
   .economy-item {
     padding: 0.875rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
 
   .item-label {
@@ -1779,6 +2050,7 @@ const toggleFaq = (index: number) => {
 
   .item-description {
     font-size: 0.875rem;
+    text-align: left;
   }
 
   .growth-stats,
@@ -1788,14 +2060,18 @@ const toggleFaq = (index: number) => {
   }
 
   .growth-content {
-    grid-template-columns: 1fr;
+    flex-direction: column-reverse;
   }
 
   .growth-text,
   .growth-chart {
     padding: 1.5rem;
+    background: transparent;
   }
-
+  .growth-text {
+    margin-top: 22px;
+    padding: 22px 0 0;
+  }
   .chart-container {
     height: 250px;
     max-width: 100%;
@@ -1833,8 +2109,19 @@ const toggleFaq = (index: number) => {
     font-size: 0.7rem;
   }
 
+  .growth-model-section {
+    padding: 20px 0;
+  }
+  .growth-model-section .container {
+    padding: 0 12px;
+  }
   .info-item {
     margin-bottom: 1.25rem;
+    text-align: left;
+  }
+  .bullet {
+    margin-top: 0;
+    line-height: 1;
   }
 
   .info-text {
@@ -1913,13 +2200,13 @@ const toggleFaq = (index: number) => {
   .economy-item {
     grid-template-columns: 1fr;
     gap: 0.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     padding-left: 50px;
   }
 
   .item-marker {
     left: 14px;
-    top: 0.5rem;
+    top: 1.1rem;
     transform: none;
     width: 12px;
     height: 12px;
@@ -1956,62 +2243,26 @@ const toggleFaq = (index: number) => {
     min-width: 200px;
   }
 
-  /* Roadmap mobile optimization */
-  .roadmap-section {
-    padding: 3rem 0 4rem;
+  .roadmap-content {
+    margin-top: 1rem;
+    min-height: 270px;
   }
 
-  .roadmap-waves {
-    height: 150px;
-    margin: 1rem 0;
+  .roadmap-mobile .roadmap-image {
+    border-radius: 4px;
   }
 
-  .roadmap-timeline {
-    height: auto;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  .roadmap-phase {
   }
 
-  .timeline-milestone {
-    position: relative;
-    left: auto !important;
-    transform: none;
-    margin-bottom: 0;
-  }
-
-  .milestone-marker {
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 0.75rem;
-  }
-
-  .marker-dot {
-    width: 12px;
-    height: 12px;
-    border-width: 2px;
-  }
-
-  .marker-line {
-    width: 0;
-    height: 0;
-  }
-
-  .milestone-content {
-    padding: 1rem;
-    max-width: 100%;
-  }
-
-  .milestone-title {
-    font-size: 1rem;
+  .phase-title {
+    font-size: 0.85rem;
     margin-bottom: 0.5rem;
   }
 
-  .milestone-tasks li {
-    font-size: 0.8rem;
+  .phase-tasks li {
+    font-size: 0.7rem;
     margin-bottom: 0.25rem;
-    line-height: 1.3;
   }
 
   /* Growth Model mobile optimization */
@@ -2069,13 +2320,30 @@ const toggleFaq = (index: number) => {
     font-size: 1.375rem;
   }
 
-  .section-subtitle {
-    font-size: 0.85rem;
+  .section-subtitle,
+  .section-description {
+    font-size: 11px;
+    text-align: left;
+  }
+
+  .token-features {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
   }
 
   .feature-card,
   .governance-card {
-    padding: 1rem;
+    padding: 0.875rem;
+  }
+
+  .feature-title,
+  .governance-title {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  .feature-description {
+    font-size: 0.75rem;
   }
 
   .feature-icon,
@@ -2123,13 +2391,13 @@ const toggleFaq = (index: number) => {
   .economy-item {
     grid-template-columns: 1fr;
     gap: 0.25rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
     padding-left: 40px;
   }
 
   .item-marker {
     left: 9px;
-    top: 0.25rem;
+    top: 1.25rem;
     transform: none;
     width: 10px;
     height: 10px;
@@ -2146,25 +2414,26 @@ const toggleFaq = (index: number) => {
     padding-left: 0;
   }
 
-  /* Roadmap extra small screens */
-  .roadmap-section {
-    padding: 2rem 0 3rem;
+  .roadmap-content {
+    margin-top: 1rem;
+    min-height: 270px;
   }
 
-  .roadmap-waves {
-    height: 120px;
+  .roadmap-mobile .roadmap-image {
+    border-radius: 4px;
   }
 
-  .milestone-content {
-    padding: 0.875rem;
+  .roadmap-phase {
   }
 
-  .milestone-title {
-    font-size: 0.95rem;
+  .phase-title {
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
   }
 
-  .milestone-tasks li {
-    font-size: 0.75rem;
+  .phase-tasks li {
+    font-size: 0.65rem;
+    margin-bottom: 0.2rem;
   }
 }
 
@@ -2179,7 +2448,7 @@ const toggleFaq = (index: number) => {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.3));
+  /* filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.3)); */
 }
 
 .token-icon {
@@ -2199,16 +2468,17 @@ const toggleFaq = (index: number) => {
 
 .roadmap-image {
   width: 100%;
-  max-width: 800px;
   height: auto;
   margin: 0 auto;
   display: block;
 }
 
 .exchange-logo {
-  width: 60px;
-  height: 60px;
+  width: clamp(40px, 8vw, 60px);
+  height: clamp(40px, 8vw, 60px);
   margin-bottom: 1rem;
+  object-fit: contain;
+  transition: all 0.3s ease;
 }
 
 .governance-image {

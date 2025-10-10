@@ -3,9 +3,9 @@
     <!-- Space Background Image -->
     <div class="hero-background">
       <img
-        :src="backgroundImage"
+        class="hero_bg_image"
         alt="Space Background"
-        class="hero-bg-image"
+        :src="backgroundImage"
       />
       <div class="hero-overlay"></div>
     </div>
@@ -24,8 +24,11 @@
           </p>
         </div>
 
-        <!-- Call to Action -->
-        <div class="hero-actions">
+        <!-- Call to Action 手机端固定显示在页面下方-->
+        <div
+          class="hero-actions"
+          :class="{ 'fixed-bottom': screenWidth < 768 }"
+        >
           <button class="btn btn-primary">
             {{ $t("hero.readWhitepaper") }}
           </button>
@@ -98,7 +101,7 @@ onUnmounted(() => {
   z-index: -1;
 }
 
-.hero-bg-image {
+.hero_bg_image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -200,9 +203,11 @@ onUnmounted(() => {
 
 .hero-actions {
   display: flex;
-  gap: 1.5rem;
+  flex-direction: row;
+  gap: 19px;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-wrap: nowrap;
   margin-bottom: 4rem;
 }
 
@@ -330,6 +335,7 @@ onUnmounted(() => {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 500;
+  white-space: nowrap;
 }
 @media (max-width: 1000px) {
   .hero-subtitle {
@@ -346,6 +352,7 @@ onUnmounted(() => {
   }
   .container {
     padding: 0 1rem;
+    min-height: calc(100vh - 378px);
   }
 
   .hero-content {
@@ -375,17 +382,19 @@ onUnmounted(() => {
   }
 
   .hero-actions {
-    margin-bottom: 2rem;
-    flex-direction: column;
-    align-items: center;
+    /* margin-bottom: 2rem; */
     gap: 1rem;
   }
 
+  .btn-secondary {
+    background: linear-gradient(135deg, #1eadf0 0%, #0afb60 100%);
+    border-radius: 8px 8px 8px 8px;
+  }
   .btn {
-    width: 100%;
-    max-width: 280px;
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
+    min-width: 140px;
+    max-width: 45vw;
+    font-size: 14px;
+    padding: 1rem 0.5rem;
   }
 
   .hero-stats {
@@ -393,7 +402,7 @@ onUnmounted(() => {
     gap: 0;
     width: 90%;
     max-width: 400px;
-    margin: 2rem auto 0;
+    margin: 2rem auto 23px;
   }
 
   .stat-item {
@@ -410,32 +419,34 @@ onUnmounted(() => {
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 0;
+  }
+  .btn-secondary {
+    background: linear-gradient(135deg, #1eadf0 0%, #0afb60 100%);
+    border-radius: 8px 8px 8px 8px;
+  }
   .hero-title {
     font-size: clamp(2rem, 7vw, 3rem);
-    margin-bottom: 1.5rem;
+    margin: 2.5rem 5.5rem 0.5rem;
   }
 
   .hero-subtitle {
-    font-size: clamp(0.9rem, 3.5vw, 1.125rem);
+    font-size: clamp(0.7rem, 3.5vw, 1.125rem);
     padding: 0 0.5rem;
-    margin-bottom: 1.5rem;
+    margin: 0 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .hero-actions {
-    margin-bottom: 1.5rem;
-  }
-
-  .btn {
-    padding: 0.875rem 1.25rem;
-    font-size: 0.9rem;
-    min-width: 200px;
+    margin-bottom: 0;
   }
 
   .hero-stats {
     gap: 0;
     width: 95%;
     max-width: 350px;
-    margin: 1.5rem auto 0;
+    margin: 1.5rem auto 23px;
   }
 
   .stat-item {
@@ -450,8 +461,9 @@ onUnmounted(() => {
     font-size: 1.25rem;
   }
 
-  .stat-label {
-    font-size: 0.75rem;
+  .btn {
+    width: 160px;
+    font-size: 12px;
   }
 }
 
@@ -467,14 +479,14 @@ onUnmounted(() => {
 
   .btn {
     padding: 0.75rem 1rem;
-    font-size: 0.875rem;
+    font-size: 12px;
     min-width: 180px;
   }
 
   .hero-stats {
     width: 98%;
     max-width: 320px;
-    margin: 1rem auto 0;
+    margin: 1rem auto 23px;
   }
 
   .stat-item {
@@ -491,6 +503,38 @@ onUnmounted(() => {
 
   .stat-label {
     font-size: 0.7rem;
+  }
+}
+
+.hero-actions.fixed-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.12);
+  padding: 1rem 0.5rem calc(1.5rem + env(safe-area-inset-bottom)) 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  background: rgba(202, 249, 236, 0.1);
+  border-radius: 20px 20px 0px 0px;
+  border: 1px solid rgba(157, 255, 251, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@media (min-width: 768px) {
+  .hero-actions.fixed-bottom {
+    position: static;
+    background: none;
+    box-shadow: none;
+    border-top: none;
+    padding: 0;
   }
 }
 </style>
