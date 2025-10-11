@@ -1291,7 +1291,7 @@ const growthChartOptions = {
 }
 
 .governance-card:hover {
-  transform: translateY(-8px);
+  /* transform: translateY(-8px); */
   box-shadow: 0 20px 40px rgba(0, 245, 255, 0.2);
   border-color: var(--color-primary);
 }
