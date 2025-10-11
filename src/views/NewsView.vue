@@ -3,7 +3,7 @@
     <div class="container">
       <div class="page-header">
         <h1>{{ $t('nav.news') }}</h1>
-        <p>Latest news and updates from MetaPlanet.</p>
+        <p>Latest news and updates from VRT.</p>
       </div>
       <div class="content">
         <p>Coming soon...</p>

@@ -20,7 +20,6 @@
 
 <style scoped>
 .footer {
-  background: #14253a;
   padding: 0;
   min-height: 60px;
 }

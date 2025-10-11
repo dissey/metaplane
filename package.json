@@ -1,5 +1,5 @@
 {
-  "name": "metaplanet-clone",
+  "name": "VRT-clone",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "chart.js": "^4.5.0",
+    "echarts": "^6.0.0",
     "pinia": "^2.1.7",
     "vue": "^3.4.29",
+    "vue-echarts": "^8.0.0",
     "vue-i18n": "^9.13.1",
     "vue-router": "^4.3.3"
   },

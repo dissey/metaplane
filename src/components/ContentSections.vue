@@ -16,7 +16,7 @@
           <div class="feature-card">
             <div class="feature-icon">
               <img
-                src="@/assets/token_1.png"
+                :src="getImage('token_1.png')"
                 alt="Token Icon 1"
                 class="token-icon"
               />
@@ -29,7 +29,7 @@
           <div class="feature-card">
             <div class="feature-icon">
               <img
-                src="@/assets/token_2.png"
+                :src="getImage('token_2.png')"
                 alt="Token Icon 2"
                 class="token-icon"
               />
@@ -42,7 +42,7 @@
           <div class="feature-card">
             <div class="feature-icon">
               <img
-                src="@/assets/token_3.png"
+                :src="getImage('token_3.png')"
                 alt="Token Icon 3"
                 class="token-icon"
               />
@@ -58,14 +58,13 @@
     <!-- Treasury Strategy Section -->
     <section class="section treasury-section">
       <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            {{ $t("sections.treasuryStrategy.title") }}
+          </h2>
+        </div>
         <div class="section-content">
-          <div class="section-text">
-            <h2 class="section-title">
-              {{ $t("sections.treasuryStrategy.title") }}
-            </h2>
-            <div class="section-description">
-              {{ $t("sections.treasuryStrategy.description") }}
-            </div>
+          <div class="section-content-info">
             <div class="strategy-points">
               <div class="strategy-point">
                 <span class="point-bullet">•</span>
@@ -84,13 +83,13 @@
                 <span>{{ $t("sections.treasuryStrategy.point4") }}</span>
               </div>
             </div>
-          </div>
-          <div class="section-visual">
-            <img
-              src="@/assets/treasury.png"
-              alt="Treasury Strategy"
-              class="treasury-image"
-            />
+            <div class="section-visual">
+              <img
+                :src="getImage('treasury.png')"
+                alt="Treasury Strategy"
+                class="treasury-image"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -106,7 +105,7 @@
         <div class="section-content">
           <div class="section-visual">
             <img
-              src="@/assets/economy.png"
+              :src="getImage('economy.png')"
               alt="Token Economy"
               class="economy-image"
             />
@@ -199,38 +198,11 @@
             </div>
 
             <div class="growth-chart">
-              <div class="chart-container">
-                <div class="chart-visual">
-                  <div class="chart-bars">
-                    <div class="bar" style="height: 30%"></div>
-                    <div class="bar" style="height: 55%"></div>
-                    <div class="bar" style="height: 80%"></div>
-                    <div class="bar" style="height: 95%"></div>
-                    <div class="bar" style="height: 70%"></div>
-                    <div class="bar" style="height: 85%"></div>
-                  </div>
-                  <div class="chart-labels">
-                    <span>{{
-                      $t("sections.growthModel.chartLabels.jan")
-                    }}</span>
-                    <span>{{
-                      $t("sections.growthModel.chartLabels.feb")
-                    }}</span>
-                    <span>{{
-                      $t("sections.growthModel.chartLabels.mar")
-                    }}</span>
-                    <span>{{
-                      $t("sections.growthModel.chartLabels.apr")
-                    }}</span>
-                    <span>{{
-                      $t("sections.growthModel.chartLabels.may")
-                    }}</span>
-                    <span>{{
-                      $t("sections.growthModel.chartLabels.jun")
-                    }}</span>
-                  </div>
-                </div>
-              </div>
+              <v-chart
+                :option="growthChartOptions"
+                autoresize
+                style="height: 100%; width: 100%"
+              />
             </div>
           </div>
         </div>
@@ -238,65 +210,7 @@
     </section>
 
     <!-- Roadmap Section -->
-    <section class="section roadmap-section">
-      <!-- Desktop Roadmap (>768px) -->
-      <div class="roadmap-desktop" v-show="screenWidth > 768">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">{{ $t("sections.roadmap.title") }}</h2>
-          </div>
-          <!-- Desktop roadmap content will be overlaid on background image -->
-        </div>
-      </div>
-
-      <!-- Mobile Roadmap (≤768px) -->
-      <div class="roadmap-mobile" v-show="screenWidth <= 768">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">{{ $t("sections.roadmap.title") }}</h2>
-          </div>
-
-          <!-- Mobile roadmap image content -->
-          <div class="roadmap-content">
-            <!-- Launch Phase (Top Left) -->
-            <div class="roadmap-phase launch-phase">
-              <h3 class="phase-title">Launch Phase</h3>
-              <ul class="phase-tasks">
-                <li>Token issuance & exchange listings.</li>
-                <li>Whitepaper publication.</li>
-              </ul>
-            </div>
-
-            <!-- Utility Rollout (Top Right) -->
-            <div class="roadmap-phase utility-phase">
-              <h3 class="phase-title">Utility Rollout</h3>
-              <ul class="phase-tasks">
-                <li>Token payment integrations.</li>
-                <li>Service discounts enabled.</li>
-              </ul>
-            </div>
-
-            <!-- Expansion Phase (Bottom Left) -->
-            <div class="roadmap-phase expansion-phase">
-              <h3 class="phase-title">Expansion Phase</h3>
-              <ul class="phase-tasks">
-                <li>Governance portal launch.</li>
-                <li>Member growth campaigns.</li>
-              </ul>
-            </div>
-
-            <!-- Scaling (Bottom Right) -->
-            <div class="roadmap-phase scaling-phase">
-              <h3 class="phase-title">Scaling</h3>
-              <ul class="phase-tasks">
-                <li>New exchange listings.</li>
-                <li>Ecosystem partnerships.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <RoadMap />
 
     <!-- Exchange Listings Section -->
     <section class="section exchange-section">
@@ -308,7 +222,14 @@
           </div>
         </div>
 
-        <div class="exchange-grid">
+        <div
+          class="exchange-grid"
+          :style="{
+            backgroundImage: `url(${getImage(
+              screenWidth > 768 ? 'excharge_bg_pc.png' : 'excharge_bg.png'
+            )})`
+          }"
+        >
           <div
             v-for="(exchange, index) in exchanges"
             :key="index"
@@ -316,7 +237,7 @@
             :class="{ unAble: !exchange.isShow }"
           >
             <img
-              :src="exchange.logo"
+               :src="getImage(exchange.logo)"
               :alt="exchange.name"
               class="exchange-logo"
             />
@@ -340,7 +261,7 @@
           <div class="governance-card">
             <div class="governance-icon">
               <img
-                src="@/assets/gover_1.png"
+                :src="getImage('gover_1.png')"
                 alt="Submit proposals"
                 class="governance-image"
               />
@@ -353,7 +274,7 @@
           <div class="governance-card">
             <div class="governance-icon">
               <img
-                src="@/assets/gover_2.png"
+                :src="getImage('gover_2.png')"
                 alt="Vote transparently"
                 class="governance-image"
               />
@@ -366,7 +287,7 @@
           <div class="governance-card">
             <div class="governance-icon">
               <img
-                src="@/assets/gover_3.png"
+                :src="getImage('gover_3.png')"
                 alt="Shape the future"
                 class="governance-image"
               />
@@ -386,7 +307,14 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="section faq-section">
+    <section
+      class="section faq-section"
+      :style="{
+        backgroundImage: `url(${getImage(
+          screenWidth > 768 ? 'FAQ_pc.png' : 'FAQ.png'
+        )})`
+      }"
+    >
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">{{ $t("sections.faq.title") }}</h2>
@@ -420,10 +348,21 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useI18n } from "vue-i18n";
+import RoadMap from "./roadMap.vue";
+import { use } from "echarts/core";
+import VChart from "vue-echarts";
+import { BarChart } from "echarts/charts";
+import {
+  GridComponent,
+  TooltipComponent,
+  LegendComponent,
+} from "echarts/components";
+import { CanvasRenderer } from "echarts/renderers";
 
 const { t } = useI18n();
 const openFaqs = ref<number[]>([]);
-
+const getImage = (name: string) =>
+  new URL(`../assets/${name}`, import.meta.url).href
 // Responsive screen width for roadmap sections
 const screenWidth = ref(window.innerWidth);
 
@@ -432,35 +371,35 @@ const exchanges = [
   {
     name: "BNB",
     nameKey: "sections.exchanges.coingecko",
-    logo: "/src/assets/list_1.png",
+    logo: "list_1.png",
     active: true,
     isShow: false,
   },
   {
     name: "DEX",
     nameKey: "sections.exchanges.dex",
-    logo: "/src/assets/list_2.png",
+    logo: "list_2.png",
     active: false,
     isShow: true,
   },
   {
     name: "Uniswap",
     nameKey: "sections.exchanges.uniswap",
-    logo: "/src/assets/list_3.png",
+    logo: "list_3.png",
     active: false,
     isShow: true,
   },
   {
     name: "Bitget",
     nameKey: "sections.exchanges.bitget",
-    logo: "/src/assets/list_4.png",
+    logo: "list_4.png",
     active: false,
     isShow: true,
   },
   {
     name: "PancakeSwap",
     nameKey: "sections.exchanges.pancakeswap",
-    logo: "/src/assets/list_5.png",
+    logo: "list_5.png",
     active: false,
     isShow: true,
   },
@@ -508,6 +447,62 @@ const toggleFaq = (index: number) => {
   } else {
     openFaqs.value.push(index);
   }
+};
+
+use([
+  BarChart,
+  GridComponent,
+  TooltipComponent,
+  LegendComponent,
+  CanvasRenderer,
+]);
+
+const growthChartOptions = {
+  // backgroundColor: "#10232e",
+  tooltip: { trigger: "axis" },
+  legend: {
+    data: ["A组", "B组", "C组"],
+    bottom: 10,
+    itemHeight: 8, // 图标高度设置为 12px
+    itemGap: 20, // 图标间距设置为 20px
+    textStyle: { color: "#fff", fontSize: 14, paddingTop: 15 },
+  },
+  grid: { left: 40, right: 20, top: 30, bottom: 70 },
+  xAxis: {
+    type: "category",
+    data: ["1月", "2月", "3月", "4月"],
+    axisLine: { lineStyle: { color: "#fff" } },
+    axisLabel: { color: "#fff", fontSize: 14 },
+  },
+  yAxis: {
+    type: "value",
+    axisLine: { lineStyle: { color: "#fff" } },
+    axisLabel: { color: "#fff", fontSize: 14 },
+    splitLine: { lineStyle: { color: "#23404e" } },
+  },
+  series: [
+    {
+      name: "A组",
+      type: "bar",
+      data: [30, 40, 80, 50],
+      barWidth: '25%', 
+      itemStyle: { color: "#ffe082" },
+    },
+    {
+      name: "B组",
+      type: "bar",
+      data: [65, 70, 75, 95],
+      barWidth: '25%', 
+      itemStyle: { color: "#4dd0e1" },
+    },
+    {
+      name: "C组",
+      type: "bar",
+      data: [45, 25, 80, 35],
+      barWidth: '25%', 
+      itemStyle: { color: "#1976d2" },
+    },
+  ],
 };
 </script>
 
@@ -738,11 +733,6 @@ const toggleFaq = (index: number) => {
 
 /* Token Economy Section */
 .token-economy-section {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 255, 136, 0.05),
-    rgba(0, 245, 255, 0.05)
-  );
   padding: 4rem 0;
 }
 
@@ -946,7 +936,7 @@ const toggleFaq = (index: number) => {
     var(--color-primary),
     var(--color-secondary)
   );
-  height: calc(100% - 97px);
+  height: calc(100% - 37px);
 }
 
 .economy-item {
@@ -1151,27 +1141,9 @@ const toggleFaq = (index: number) => {
 }
 
 .growth-chart {
-  background: linear-gradient(
-    135deg,
-    rgba(243, 156, 18, 0.1),
-    rgba(52, 152, 219, 0.05)
-  );
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.chart-container {
-  position: relative;
-  height: 350px;
-  width: 100%;
-  max-width: 500px;
-}
-
-.chart-canvas {
-  width: 100% !important;
-  height: 100% !important;
+  background: #10232e;
+  padding: 20px 15px;
+  width: 50%;
 }
 
 /* Roadmap Section */
@@ -1182,127 +1154,9 @@ const toggleFaq = (index: number) => {
   margin-left: calc(-50vw + 50%);
 }
 
-/* Desktop Roadmap Styles */
-.roadmap-desktop {
-  background: linear-gradient(135deg, #0a1428 0%, #1a1f35 50%, #0f1729 100%);
-  background-image: url("@/assets/roadMap_pc.png");
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-blend-mode: overlay;
-  padding: 4rem 0 6rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.roadmap-desktop::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 20, 40, 0.7) 0%,
-    rgba(26, 31, 53, 0.6) 50%,
-    rgba(15, 23, 41, 0.8) 100%
-  );
-  z-index: 1;
-}
-
-.roadmap-desktop .container {
-  position: relative;
-  z-index: 2;
-  max-width: var(--breakpoint-xl);
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Mobile Roadmap Styles */
-.roadmap-mobile {
-  /* height: 315px; */
-  background: linear-gradient(135deg, #0a1428 0%, #1a1f35 50%, #0f1729 100%);
-  background-image: url("@/assets/roadMap.png");
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-blend-mode: overlay;
-  position: relative;
-  overflow: hidden;
-}
-.roadmap-mobile .container {
-  padding: 0;
-}
-
-.roadmap-mobile::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 20, 40, 0.85) 0%,
-    rgba(26, 31, 53, 0.8) 50%,
-    rgba(15, 23, 41, 0.9) 100%
-  );
-  z-index: 1;
-}
-
-.roadmap-mobile .container {
-  position: relative;
-  z-index: 2;
-  margin: 0 auto;
-  padding: 0;
-}
-
 .roadmap-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  /* gap: 2rem; */
   margin-top: 1rem;
-  position: relative;
-  min-height: 400px;
-  align-items: start;
-}
-
-.roadmap-mobile .roadmap-image {
-  grid-column: 1 / 3;
-  grid-row: 2;
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  z-index: 1;
-  justify-self: center;
-}
-
-/* Roadmap Phase Styling */
-.roadmap-phase {
-  position: relative;
-  min-width: 180px;
-  max-width: 200px;
-  /* backdrop-filter: blur(15px); */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  z-index: 2;
-}
-
-.phase-marker {
-  width: 12px;
-  height: 12px;
-  background: linear-gradient(
-    45deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
-  border-radius: 50%;
-  border: 2px solid var(--color-background);
-  box-shadow: 0 0 15px rgba(0, 245, 255, 0.6);
-  margin-bottom: 0.5rem;
-  position: relative;
+  min-height: 270px;
 }
 
 .phase-title {
@@ -1336,211 +1190,26 @@ const toggleFaq = (index: number) => {
   font-weight: bold;
 }
 
-/* Phase Grid Positioning */
-.launch-phase {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.utility-phase {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.expansion-phase {
-  grid-column: 1;
-  grid-row: 3;
-}
-
-.scaling-phase {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-/* Phase Connectors - Vertical lines extending from phase-marker */
-.phase-connector {
-  position: absolute;
-  background: linear-gradient(
-    45deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
-  width: 2px;
-  height: 80px;
-}
-
-.launch-connector {
-  top: 12px;
-  left: 6px;
-}
-
-.utility-connector {
-  top: 12px;
-  left: 6px;
-}
-
-.expansion-connector {
-  top: -80px;
-  left: 6px;
-}
-
-.scaling-connector {
-  top: -80px;
-  left: 6px;
-}
-
-.roadmap-waves {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  margin: 2rem 0;
-  z-index: 3;
-}
-
-.wave-svg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.wave-svg path {
-  animation: waveFlow 8s ease-in-out infinite;
-  filter: drop-shadow(0 0 10px rgba(0, 245, 255, 0.3));
-}
-
-.wave-svg path:nth-child(4) {
-  animation-delay: 1s;
-}
-
-.wave-svg path:nth-child(5) {
-  animation-delay: 2s;
-}
-
-@keyframes waveFlow {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.roadmap-timeline {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  margin-top: -150px;
-  z-index: 4;
-}
-
-.timeline-milestone {
-  position: absolute;
-  top: 0;
-  transform: translateX(0); /* Remove centering */
-  z-index: 10;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-.milestone-marker {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.marker-dot {
-  width: 16px;
-  height: 16px;
-  background: linear-gradient(
-    45deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
-  border-radius: 50%;
-  border: 3px solid var(--color-background);
-  box-shadow: 0 0 20px rgba(0, 245, 255, 0.6);
-  position: relative;
-  z-index: 2;
-}
-
-.marker-line {
-  width: 2px;
-  height: 120px;
-  background: linear-gradient(to bottom, var(--color-primary), transparent);
-  margin-top: -2px;
-}
-
-.milestone-content {
-  background: linear-gradient(
-    145deg,
-    rgba(26, 31, 53, 0.95),
-    rgba(42, 47, 69, 0.9)
-  );
-  /* border: 1px solid var(--color-border); */
-  border-radius: 1rem;
-  padding: 1.5rem;
-  min-width: 200px;
-  max-width: 250px;
-  /* backdrop-filter: blur(15px); */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  position: relative;
-  margin-top: 40px; /* Align with marker dot */
-}
-
-.milestone-title {
-  color: var(--color-primary);
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  text-align: left; /* Left align instead of center */
-}
-
-.milestone-tasks {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.milestone-tasks li {
-  color: var(--color-text-secondary);
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-  padding-left: 1rem;
-  position: relative;
-  line-height: 1.4;
-}
-
-.milestone-tasks li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--color-primary);
-  font-weight: bold;
-}
-
 /* Exchange Section */
 .exchange-section {
-  background: var(--color-surface);
+  /* background: var(--color-surface); */
 }
 
 .exchange-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   margin: 0 auto;
+
+  background-image: url("@/assets/excharge_bg_pc.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  position: relative;
+  overflow: hidden;
 }
 
 .exchange-card {
-  background: linear-gradient(
-    145deg,
-    var(--color-surface-light),
-    var(--color-surface)
-  );
   border: 2px solid var(--color-border);
   text-align: center;
   transition: all 0.3s ease;
@@ -1550,7 +1219,7 @@ const toggleFaq = (index: number) => {
 
 .exchange-card:hover {
   border-color: var(--color-primary);
-  transform: translateY(-4px);
+  /* transform: translateY(-4px); */
   box-shadow: 0 10px 30px rgba(0, 245, 255, 0.2);
 }
 
@@ -1578,6 +1247,8 @@ const toggleFaq = (index: number) => {
 
 /* Governance Section */
 .governance-section {
+  padding-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .governance-features {
@@ -1600,6 +1271,11 @@ const toggleFaq = (index: number) => {
   .governance-features {
     gap: 1rem;
     margin-bottom: 16px;
+  }
+  .growth-chart {
+    width: 100%;
+    height: 300px;
+    background-color: transparent;
   }
 }
 
@@ -1716,6 +1392,42 @@ const toggleFaq = (index: number) => {
   line-height: 1.6;
 }
 
+.chart-container {
+  height: 200px;
+}
+
+.chart-bars {
+  height: 100px;
+  margin: 0 10px 10px 20px;
+}
+
+.chart-bar {
+  width: 12px;
+}
+
+.info-text {
+  font-size: 0.8rem;
+}
+
+.chart-legend {
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.data-table {
+  font-size: 0.75rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.4rem 0.2rem;
+}
+
+.growth-table {
+  margin-top: 1.5rem;
+  overflow-x: auto;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .section-content {
@@ -1788,6 +1500,9 @@ const toggleFaq = (index: number) => {
   .faq-section .container {
     padding-top: 20px;
   }
+  .governance-action {
+    margin-bottom: 2rem;
+  }
   .section-header {
     margin-bottom: 2.5rem;
   }
@@ -1798,6 +1513,24 @@ const toggleFaq = (index: number) => {
     font-size: clamp(1.75rem, 6vw, 2.5rem);
   }
 
+  .treasury-section .section-content-info {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .treasury-section .section-header {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .token-economy-section .section-title {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .token-economy-section {
+    padding-top: 1.5rem;
+    padding-bottom: 40px;
+  }
   .section-subtitle,
   .section-description {
     font-size: 14px;
@@ -1857,7 +1590,6 @@ const toggleFaq = (index: number) => {
   }
 
   .growth-stats,
-  .growth-chart,
   .growth-info-panel {
     padding: 1.5rem;
   }
@@ -1944,15 +1676,15 @@ const toggleFaq = (index: number) => {
     max-width: 100%;
     width: 100%;
   }
-  .item-description {
-    text-align: left;
+
+  .growth-model-section {
+    padding: 1.5rem 0;
   }
-  .governance-action {
-    padding-bottom: 24px;
+  .growth-model-section .section-title {
+    padding-top: 0;
   }
-  .governance-title {
-    padding: 10px 0;
-    margin-bottom: 0;
+  .exchange-grid {
+    background-image: url("@/assets/excharge_bg.png");
   }
 }
 
@@ -1963,6 +1695,9 @@ const toggleFaq = (index: number) => {
 
   .faq-section {
     background-image: url("@/assets/FAQ.png");
+  }
+  .faq-section .container {
+    padding-top: 0;
   }
   .section-title {
     font-size: clamp(1.5rem, 5vw, 2rem);
@@ -2055,7 +1790,6 @@ const toggleFaq = (index: number) => {
   }
 
   .growth-stats,
-  .growth-chart,
   .growth-info-panel {
     padding: 1.25rem;
   }
@@ -2064,8 +1798,7 @@ const toggleFaq = (index: number) => {
     flex-direction: column-reverse;
   }
 
-  .growth-text,
-  .growth-chart {
+  .growth-text {
     padding: 1.5rem;
     background: transparent;
   }
@@ -2110,9 +1843,6 @@ const toggleFaq = (index: number) => {
     font-size: 0.7rem;
   }
 
-  .growth-model-section {
-    padding: 20px 0;
-  }
   .growth-model-section .container {
     padding: 0 12px;
   }
@@ -2196,6 +1926,7 @@ const toggleFaq = (index: number) => {
 
   .timeline-line {
     left: 20px;
+    height: calc(100% - 97px);
   }
 
   .economy-item {
@@ -2243,69 +1974,17 @@ const toggleFaq = (index: number) => {
     font-size: 0.9rem;
     min-width: 200px;
   }
-
-  .roadmap-content {
-    margin-top: 1rem;
-    min-height: 270px;
-  }
-
-  .roadmap-mobile .roadmap-image {
-    border-radius: 4px;
-  }
-
-  .roadmap-phase {
-  }
-
   .phase-title {
     font-size: 0.85rem;
     margin-bottom: 0.5rem;
   }
-
   .phase-tasks li {
     font-size: 0.7rem;
     margin-bottom: 0.25rem;
   }
-
-  /* Growth Model mobile optimization */
-  .growth-info-panel,
-  .growth-chart {
-    padding: 1rem;
-  }
-
-  .chart-container {
-    height: 200px;
-  }
-
-  .chart-bars {
-    height: 100px;
-    margin: 0 10px 10px 20px;
-  }
-
-  .chart-bar {
-    width: 12px;
-  }
-
-  .info-text {
-    font-size: 0.8rem;
-  }
-
-  .chart-legend {
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
-
-  .data-table {
-    font-size: 0.75rem;
-  }
-
-  .data-table th,
-  .data-table td {
-    padding: 0.4rem 0.2rem;
-  }
-
-  .growth-table {
-    margin-top: 1.5rem;
-    overflow-x: auto;
+  .roadmap-content {
+    margin-top: 1rem;
+    min-height: 270px;
   }
 }
 
@@ -2387,6 +2066,7 @@ const toggleFaq = (index: number) => {
 
   .timeline-line {
     left: 15px;
+    height: calc(100% - 97px);
   }
 
   .economy-item {
@@ -2414,27 +2094,17 @@ const toggleFaq = (index: number) => {
     font-size: 0.85rem;
     padding-left: 0;
   }
-
-  .roadmap-content {
-    margin-top: 1rem;
-    min-height: 270px;
-  }
-
-  .roadmap-mobile .roadmap-image {
-    border-radius: 4px;
-  }
-
-  .roadmap-phase {
-  }
-
   .phase-title {
     font-size: 0.8rem;
     margin-bottom: 0.4rem;
   }
-
   .phase-tasks li {
     font-size: 0.65rem;
     margin-bottom: 0.2rem;
+  }
+  .roadmap-content {
+    margin-top: 1rem;
+    min-height: 270px;
   }
 }
 

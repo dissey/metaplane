@@ -59,13 +59,15 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from "vue";
+import topMobile from "@/assets/top.png";
+import topPc from "@/assets/top_pc.png";
 
 const screenWidth = ref(window.innerWidth);
 
 const backgroundImage = computed(() => {
   return screenWidth.value < 768
-    ? "/src/assets/top.png"
-    : "/src/assets/top_pc.png";
+    ? topMobile
+    : topPc;
 });
 
 const handleResize = () => {
@@ -267,9 +269,9 @@ onUnmounted(() => {
   z-index: -1;
 }
 
-.btn-primary:hover {
+/* .btn-primary:hover {
   transform: translateY(-2px);
-}
+} */
 
 .btn-secondary {
   width: 240px;

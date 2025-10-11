@@ -9,7 +9,7 @@
               <circle cx="16" cy="16" r="16" fill="currentColor"/>
               <path d="M12.5 11.5h7v2h-7v-2zm-1 4h9v2h-9v-2zm1 4h7v2h-7v-2z" fill="white"/>
             </svg>
-            <span class="brand-text">MetaPlanet</span>
+            <span class="brand-text">VRT</span>
           </div> -->
         </router-link>
       </div>
@@ -158,7 +158,7 @@
                 <circle cx="16" cy="16" r="16" fill="currentColor"/>
                 <path d="M12.5 11.5h7v2h-7v-2zm-1 4h9v2h-9v-2zm1 4h7v2h-7v-2z" fill="white"/>
               </svg>
-              <span class="sidebar-brand-text">MetaPlanet</span>
+              <span class="sidebar-brand-text">VRT</span>
             </div>
             <button 
               @click.stop="closeMobileMenu" 
@@ -420,6 +420,8 @@ onUnmounted(() => {
   .header.header-scrolled {
     background: transparent;
     box-shadow: none;
+    backdrop-filter: none;
+    border-bottom: none;
   }
 }
 

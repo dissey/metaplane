@@ -3,7 +3,7 @@
     <div class="container">
       <div class="page-header">
         <h1>{{ $t('nav.about') }}</h1>
-        <p>Learn more about MetaPlanet and our Bitcoin treasury strategy.</p>
+        <p>Learn more about VRT and our Bitcoin treasury strategy.</p>
       </div>
       <div class="content">
         <p>Coming soon...</p>
